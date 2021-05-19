@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c5428458a0f2a724b3f061cd9e22ebfa",
+    "content-hash": "fb25f47300052f6367527a981a17478b",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -22,7 +22,7 @@
             },
             "require": {
                 "composer-plugin-api": "^1.1.0 || ^2.0",
-                "php": "^7"
+                "php": "^7 || ^8"
             },
             "replace": {
                 "ocramius/package-versions": "1.11.99"
@@ -8367,7 +8367,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "<=7.4.6",
+        "php": "^7.4.6",
         "ext-ctype": "*",
         "ext-iconv": "*"
     },
