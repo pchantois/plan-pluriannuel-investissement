@@ -1,0 +1,12 @@
+{% extends 'base_' ~ ga_theme ~ '.html.twig' %}
+
+{% block title %}New OperationData{% endblock %}
+
+{% block body %}
+    <h1>Gestion du financement de l'opération</h1>
+
+    {{ include('admin/operation_data/_form.html.twig') }}
+
+
+    <a href="{{ path('operation_index') }}">{{ configs.listButtonLibelle }}</a>
+{% endblock %}

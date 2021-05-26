@@ -1,0 +1,30 @@
+{% extends 'base_' ~ ga_theme ~ '.html.twig' %}
+
+{% block title %}CodeMaire{% endblock %}
+
+{% block body %}
+    <h1>CodeMaire</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ code_maire.id }}</td>
+            </tr>
+            <tr>
+                <th>Code</th>
+                <td>{{ code_maire.code }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ code_maire.libelle }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_code_maire_index') }}">back to list</a>
+
+    <a href="{{ path('admin_code_maire_edit', {'id': code_maire.id}) }}">edit</a>
+
+    {{ include('admin_code_maire/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base_' ~ ga_theme ~ '.html.twig' %}
+
+{% block title %}CodeMaire index{% endblock %}
+
+{% block body %}
+    <h1>CodeMaire index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Libelle</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for code_maire in code_maires %}
+            <tr>
+                <td>{{ code_maire.id }}</td>
+                <td>{{ code_maire.code }}</td>
+                <td>{{ code_maire.libelle }}</td>
+                <td>
+                    <a href="{{ path('admin_code_maire_show', {'id': code_maire.id}) }}">show</a>
+                    <a href="{{ path('admin_code_maire_edit', {'id': code_maire.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_code_maire_new') }}">Create new</a>
+{% endblock %}

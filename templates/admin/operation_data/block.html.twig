@@ -1,0 +1,28 @@
+    <table class="table-wrapper">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Montant</th>
+                <th>Annee</th>
+                <th>Type</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for item in items %}
+            <tr>
+                <td>{{ item.operation.code }}</td>
+                <td>{{ item.montant }}</td>
+                <td>{{ item.annee }}</td>
+                <td>{{ item.type ? 'Dépense' : 'Recette' }}</td>
+                <td>
+                    {# <a href="{{ path('admin_operation_data_show', {'id': item.id}) }}">show</a> #}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>

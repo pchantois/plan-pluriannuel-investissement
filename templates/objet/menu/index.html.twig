@@ -1,0 +1,10 @@
+
+<!-- Nav -->
+    <nav id="nav">
+        <ul>
+        {% for menu in menus %}
+        {% include "objet/menu/show.html.twig" with {'menu': menu} %}
+        {% else %}
+        {% endfor %}
+        </ul>
+    </nav>

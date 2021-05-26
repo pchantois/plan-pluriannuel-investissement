@@ -1,0 +1,13 @@
+{% extends 'base_' ~ ga_theme ~ '.html.twig' %}
+
+{% block title %}Edit OperationData{% endblock %}
+
+{% block body %}
+    <h1>Edit OperationData</h1>
+
+    {{ include('admin/operation_data/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('admin_operation_data_index') }}">back to list</a>
+
+    {{ include('admin/operation_data/_delete_form.html.twig') }}
+{% endblock %}

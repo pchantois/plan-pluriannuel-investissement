@@ -1,0 +1,88 @@
+{{ form_start(form) }}
+    {# {{ form_widget(form) }} #}
+    <section id="data">
+        <article class="operation" id="operation">
+            <header>{{ operation.libelle }}</header>
+            <p id="reference">Département XXX - Direction XXX</p>
+            <section class="description">
+                <header>description de l’opération d’investissement</header>
+                <p>{{ operation.description }}</p>
+            </section>
+            <section class="estimation">
+                <header>estimation du coût de l’opération</header>
+                {# <p>{% include "admin/operation/ppi_parCategorie.html.twig" with {'items': ppi} %}</p> #}
+            </section>
+            <section class="notifications">
+                <header>remarques</header>
+                <p>{{ operation.commentaire }}</p>
+            </section>
+        </article>
+    </section>
+    <section id="dataOperationData">
+        {# <table class="operationData">
+        
+        {% for investment in form.operationData %}
+            <tr>
+                <td>{{ form_widget(investment.montant) }}</td>
+                <td>{{ form_widget(investment.annee) }}</td>
+                <td>{{ form_widget(investment.type) }}</td>
+            </tr>
+        {% endfor %}
+        </table> #}
+        <ul class="operationData">
+            {% for investment in form.operationData %}
+                <li>{{ form_widget(investment.montant) }}{{ form_widget(investment.annee) }}{{ form_widget(investment.type) }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+
+    
+<div id="operation">
+    <div style="display: none;">
+        {{ form_label(form.code) }}
+        {{ form_widget(form.code) }}
+        {{ form_errors(form.code) }}
+        
+        {{ form_label(form.libelle) }}
+        {{ form_widget(form.libelle) }}
+        {{ form_errors(form.libelle) }}
+        
+        {{ form_label(form.description) }}
+        {{ form_widget(form.description) }}
+        {{ form_errors(form.description) }}
+        
+        {{ form_label(form.commentaire, 'Remarque') }}
+        {{ form_widget(form.commentaire) }}
+        {{ form_errors(form.commentaire) }}
+        
+        {{ form_label(form.regroupementOpe) }}
+        {{ form_widget(form.regroupementOpe) }}
+        {{ form_errors(form.regroupementOpe) }}
+        
+        {{ form_label(form.codeMaire) }}
+        {{ form_widget(form.codeMaire) }}
+        {{ form_errors(form.codeMaire) }}
+        
+        {{ form_label(form.natureOpe) }}
+        {{ form_widget(form.natureOpe) }}
+        {{ form_errors(form.natureOpe) }}
+        
+        {{ form_label(form.politiquePub) }}
+        {{ form_widget(form.politiquePub) }}
+        {{ form_errors(form.politiquePub) }}
+        
+        {{ form_label(form.dob) }}
+        {{ form_widget(form.dob) }}
+        {{ form_errors(form.dob) }}
+        
+        {{ form_label(form.recueil) }}
+        {{ form_widget(form.recueil) }}
+        {{ form_errors(form.recueil) }}
+    </div>
+        <button class="btn">{{ button_label|default('Save') }}</button>
+</div>
+
+{# <ul class="tags" data-prototype="{{ form_widget(form.operationData.vars.prototype)|e('html_attr') }}"></ul> #}
+        
+{{ form_end(form) }}

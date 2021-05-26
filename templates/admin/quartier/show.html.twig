@@ -1,0 +1,30 @@
+{% extends 'base_' ~ ga_theme ~ '.html.twig' %}
+
+{% block title %}Quartier{% endblock %}
+
+{% block body %}
+    <h1>Quartier</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ quartier.id }}</td>
+            </tr>
+            <tr>
+                <th>Code</th>
+                <td>{{ quartier.code }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ quartier.libelle }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_quartier_index') }}">back to list</a>
+
+    <a href="{{ path('admin_quartier_edit', {'id': quartier.id}) }}">edit</a>
+
+    {{ include('admin_quartier/_delete_form.html.twig') }}
+{% endblock %}

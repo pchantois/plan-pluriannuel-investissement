@@ -1,0 +1,157 @@
+{% set periode = periode_ref - 1 %}
+{% if version == 'seminaire' %}
+    {% set periode_end = periode + 2 %}
+{% else %}
+    {% set periode_end = periode + 7 %}
+{% endif %}
+{% set libelle_avant = 'avant ' ~ periode_end %}
+{% set libelle_apres = 'après ' ~ periode_end %}
+{% set chargeNet, chargeNet2 = [], [] %}
+{% set montantTotal = 0 %}
+{% set montantAvant = 0 %}
+{% set montantApres = 0 %}
+{% set etat = 'init' %}
+<table id="recueil_estimation" class="table table-striped table-bordered dislay">
+    <thead>
+        <tr>
+            <th>&nbsp;</th>
+            {% if version == "seminaire" %}
+                <th>{{ libelle_avant }}</th>
+                <th>{{ periode_end }}</th>
+            {% else %}
+                {% for annee in periode.. periode_end %}
+                    <th>{{annee}}</th>
+                {% endfor %}
+            {% endif %}
+            <th>{{ libelle_apres }}</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Dépenses</td>
+            {% for financement in financements %}
+                {% if financement.type %}
+                    {% for annee in periode.. periode_end if annee < financement.annee %}
+                        {% if periode <= periode_end %}
+                            {% if version != "seminaire" %}
+                                <td>0</td>
+                                {% set chargeNet = chargeNet|merge([0]) %}
+                            {% endif %}
+                        {% endif %}
+                        {% set periode = periode + 1 %}
+                    {% endfor %}
+                    {% if financement.annee <= periode_ref %}
+                        {% set montantAvant = montantAvant + financement.montant %}
+                        {% set montantTotal = montantTotal + financement.montant %}
+                    {% elseif financement.annee <= periode_end %}
+                        {% if etat == 'init' %}
+                            <td>{{montantAvant|number_format(0, '', ' ')|raw}}</td>
+                            {% set chargeNet = chargeNet|merge([montantAvant]) %}
+                            {% set etat = 'montantAvant' %}
+                        {% endif %}
+                        <td>{{financement.montant|number_format(0, '', ' ')|raw}}</td>
+                        {% set chargeNet = chargeNet|merge([financement.montant]) %}
+                        {% set montantTotal = montantTotal + financement.montant %}
+                        {% set etat = 'montantCourant' %}
+                    {% else %}
+                        {% if etat == 'init' %}
+                            <td>0</td>
+                            {% set chargeNet = chargeNet|merge([0]) %}
+                            {% set etat = 'montantAvant' %}
+                        {% endif %}
+                        {% if etat == 'montantAvant' %}
+                            <td>0</td>
+                            {% set chargeNet = chargeNet|merge([0]) %}
+                            {% set etat = 'montantCourant' %}
+                        {% endif %}
+                        {% set montantApres = montantApres + financement.montant %}
+                        {% set montantTotal = montantTotal + financement.montant %}
+                    {% endif %}
+                    {% set periode = periode + 1 %}
+                {% endif %}
+            {% else %}
+                {% for annee in periode.. periode_end %}
+                    <td>0</td>
+                    {% set chargeNet = chargeNet|merge([0]) %}
+                {% endfor %}
+            {% endfor %}
+            {% set chargeNet = chargeNet|merge([montantApres]) %}
+            {% set chargeNet = chargeNet|merge([montantTotal]) %}
+            <td>{{montantApres|number_format(0, '', ' ')|raw}}</td>
+            <td>{{montantTotal|number_format(0, '', ' ')|raw}}</td>
+        </tr>
+        <tr>
+            <td>Recettes</td>
+            {% set periode = periode_ref - 1 %}
+            {% set montantTotal = 0 %}
+            {% set montantAvant = 0 %}
+            {% set montantApres = 0 %}
+            {% set etat = 'init' %}
+            {% for financement in financements %}
+                {% if not financement.type %}
+                    {% for annee in periode.. periode_end if financement.annee > annee %}
+                        {% if periode <= periode_end %}
+                            {% if version != "seminaire" %}
+                                <td>0</td>
+                                {% set chargeNet2 = chargeNet2|merge([chargeNet|first]) %}
+                                {% set chargeNet = chargeNet[1:] %}
+                            {% endif %}
+                        {% endif %}
+                        {% set periode = periode + 1 %}
+                    {% endfor %}
+                    {% if financement.annee <= periode_ref %}
+                        {% set montantAvant = montantAvant + financement.montant %}
+                        {% set montantTotal = montantTotal + financement.montant %}
+                    {% elseif financement.annee <= periode_end %}
+                        {% if etat == 'init' %}
+                            <td>{{montantAvant|number_format(0, '', ' ')|raw}}</td>
+                            {% set chargeNet2 = chargeNet2|merge([chargeNet|first - montantAvant]) %}
+                            {% set chargeNet = chargeNet[1:] %}
+                            {% set etat = 'montantAvant' %}
+                        {% endif %}
+                        <td>{{financement.montant|number_format(0, '', ' ')|raw}}</td>
+                        {% set chargeNet2 = chargeNet2|merge([chargeNet|first - financement.montant]) %}
+                        {% set chargeNet = chargeNet[1:] %}
+                        {% set montantTotal = montantTotal + financement.montant %}
+                        {% set etat = 'montantCourant' %}
+                    {% else %}
+                        {% if etat == 'init' %}
+                            <td>0</td>
+                            {% set chargeNet2 = chargeNet2|merge([chargeNet|first]) %}
+                            {% set chargeNet = chargeNet[1:] %}
+                            {% set etat = 'montantAvant' %}
+                        {% endif %}
+                        {% if etat == 'montantAvant' %}
+                            <td>0</td>
+                            {% set chargeNet2 = chargeNet2|merge([chargeNet|first]) %}
+                            {% set chargeNet = chargeNet[1:] %}
+                            {% set etat = 'montantCourant' %}
+                        {% endif %}
+                        {% set montantApres = montantApres + financement.montant %}
+                        {% set montantTotal = montantTotal + financement.montant %}
+                    {% endif %}
+                    {% set periode = periode + 1 %}
+                {% endif %}
+            {% else %}
+                {% for annee in periode.. periode_end %}
+                    <td>0</td>
+                    {% set chargeNet2 = chargeNet2|merge([chargeNet|first - montantTotal]) %}
+                    {% set chargeNet = chargeNet[1:] %}
+                {% endfor %}
+            {% endfor %}
+            {% set chargeNet2 = chargeNet2|merge([chargeNet|first - montantApres]) %}
+            {% set chargeNet = chargeNet[1:] %}
+            {% set chargeNet2 = chargeNet2|merge([chargeNet|first - montantTotal]) %}
+            {% set chargeNet = chargeNet[1:] %}
+            <td>{{montantApres|number_format(0, '', ' ')|raw}}</td>
+            <td>{{montantTotal|number_format(0, '', ' ')|raw}}</td>
+        </tr>
+        <tr class="chargeNette">
+            <td>Charge Nette</td>
+            {% for item in chargeNet2 %}
+                <td>{{item|number_format(0, '', ' ')|raw}}</td>
+            {% endfor %}
+        </tr>
+    </tbody>
+</table>

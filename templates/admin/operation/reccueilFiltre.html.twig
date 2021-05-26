@@ -1,0 +1,50 @@
+{% extends 'base_' ~ ga_theme ~ '.html.twig' %}
+{% set operation_quartier = 'quartier' %}
+{% set user_departement = 'departement' %}
+{% set user_direction = 'direction' %}
+{% set operation_polpub = 'polpub' %}
+
+{% block title %}ppi - {{ ga_theme }}{% endblock %}
+
+{% block body %}
+
+    {% for operation in operations %}
+        {# <h2>{{ configs.site.libelle.mainTitle }}</h2> #}
+        <section class="operation">
+            {% if mode == "quartier" %}
+                {% if operation.quartier %}
+                    {% if operation.quartier.libelle != operation_quartier %}
+                        <h2>{{ operation.quartier.libelle }}</h2>
+                        {% set operation_quartier = operation.quartier.libelle %}
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+            {% if mode == "polpub" %}
+                {% if operation.politiquePub %}
+                    {% if operation.politiquePub.libelle != operation_polpub %}
+                        <h2>{{ operation.politiquePub.libelle }}</h2>
+                        {% set operation_polpub = operation.politiquePub.libelle %}
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+            {% if mode == "deptdir" %}
+                {% if operation.user %}
+                    {% if (operation.user.departement != user_departement) or (operation.user.direction != user_direction) %}
+                        <h2>{{ operation.user.departement }} - {{ operation.user.direction }}</h2>
+                        {% set user_departement = operation.user.departement %}
+                        {% set user_direction = operation.user.direction %}
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+        </section>
+        {% include "admin/operation/block_reccueil.html.twig" with {'operation': operation} %}
+    {% endfor %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/fixedcolumns/3.3.1/js/dataTables.fixedColumns.min.js"></script>
+    <script type="text/javascript" language="javascript" src="{{ absolute_url(asset("assets/js/site.js")) }}"></script>
+{% endblock %}

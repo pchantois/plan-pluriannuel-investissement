@@ -1,0 +1,13 @@
+{% extends 'base_' ~ ga_theme ~ '.html.twig' %}
+
+{% block title %}Edit RegroupementOpe{% endblock %}
+
+{% block body %}
+    <h1>Edit RegroupementOpe</h1>
+
+    {{ include('admin_regroupement_ope/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('admin_regroupement_ope_index') }}">back to list</a>
+
+    {{ include('admin_regroupement_ope/_delete_form.html.twig') }}
+{% endblock %}

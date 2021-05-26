@@ -1,0 +1,35 @@
+{% extends 'base_' ~ ga_theme ~ '.html.twig' %}
+
+{% block title %}RegroupementOpe index{% endblock %}
+
+{% block body %}
+    <h1>RegroupementOpe index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for regroupement_ope in regroupement_opes %}
+            <tr>
+                <td>{{ regroupement_ope.id }}</td>
+                <td>{{ regroupement_ope.libelle }}</td>
+                <td>
+                    <a href="{{ path('admin_regroupement_ope_show', {'id': regroupement_ope.id}) }}">show</a>
+                    <a href="{{ path('admin_regroupement_ope_edit', {'id': regroupement_ope.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_regroupement_ope_new') }}">Create new</a>
+{% endblock %}
