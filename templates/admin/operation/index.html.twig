@@ -1,0 +1,41 @@
+{% extends 'base_' ~ ga_theme ~ '.html.twig' %}
+
+{% block title %}ppi - {{ ga_theme }}{% endblock %}
+
+{% block body %}
+<article id="ppi">
+    {# <h2>{{ configs.site.libelle.mainTitle }}</h2> #}
+    
+    <table id="ppi_global" class="table table-striped table-bordered dislay ppi">
+        <thead>
+            <tr>
+                <th>Libellé</th>
+                <th>Description</th>
+                <th>Commentaire</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for operation in operations %}
+            <tr>
+                <td><a href="{{ path('operation_show', {'id': operation.id, 'version': version}) }}">{{ operation.libelle }}</a></td>
+                <td>{{operation.description}}</td>
+                <td>{{operation.commentaire}}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</article>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/fixedcolumns/3.3.1/js/dataTables.fixedColumns.min.js"></script>
+    <script src="{{ asset("assets/js/site.js") }}"></script>
+{% endblock %}

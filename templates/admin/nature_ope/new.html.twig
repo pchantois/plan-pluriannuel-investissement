@@ -1,0 +1,11 @@
+{% extends 'base_' ~ ga_theme ~ '.html.twig' %}
+
+{% block title %}New NatureOpe{% endblock %}
+
+{% block body %}
+    <h1>Create new NatureOpe</h1>
+
+    {{ include('admin_nature_ope/_form.html.twig') }}
+
+    <a href="{{ path('admin_nature_ope_index') }}">back to list</a>
+{% endblock %}

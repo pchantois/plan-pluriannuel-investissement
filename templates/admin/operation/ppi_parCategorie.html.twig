@@ -1,0 +1,24 @@
+<table class="ppiParCategorie">
+    <thead>
+        <tr>
+            <th rowspan="2">libelle</th>
+            {% for annee in items|first|keys %}
+            <th>{{annee}}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+    {% for libelle, item in items %}
+        <tr>
+            <td>{{ libelle }}</td>
+            {% for operation in item %}
+            <td>{{ operation }}</td>
+            {% endfor %}
+        </tr>
+    {% else %}
+        <tr>
+            <td colspan="9">no records found</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

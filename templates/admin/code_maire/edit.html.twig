@@ -1,0 +1,13 @@
+{% extends 'base_' ~ ga_theme ~ '.html.twig' %}
+
+{% block title %}Edit CodeMaire{% endblock %}
+
+{% block body %}
+    <h1>Edit CodeMaire</h1>
+
+    {{ include('admin_code_maire/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('admin_code_maire_index') }}">back to list</a>
+
+    {{ include('admin_code_maire/_delete_form.html.twig') }}
+{% endblock %}

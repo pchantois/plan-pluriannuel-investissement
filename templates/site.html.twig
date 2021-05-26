@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<!--
+	Helios by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+        <title>{% block title %}Welcome!{% endblock %}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        {% block stylesheets %}
+			<link rel="stylesheet" href="/themes/html5up-helios/assets/css/main.css" />
+            <link rel="stylesheet" href="/themes/base/css/site.css" />
+			<noscript><link rel="stylesheet" href="/themes/html5up-helios/assets/css/noscript.css" /></noscript>
+             <link rel="stylesheet" href="/assets/css/site.css" />
+            <link rel="stylesheet" href="{{ asset('bundles/fullcalendar/css/fullcalendar/fullcalendar.min.css') }}" />
+
+        {% endblock %}
+
+	</head>
+	<body class="left-sidebar is-preload">
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+        <!-- Scripts -->
+            <script src="/themes/html5up-helios/assets/js/jquery.min.js"></script>
+            <script src="/themes/html5up-helios/assets/js/jquery.dropotron.min.js"></script>
+            <script src="/themes/html5up-helios/assets/js/jquery.scrolly.min.js"></script>
+            <script src="/themes/html5up-helios/assets/js/jquery.scrollex.min.js"></script>
+            <script src="/themes/html5up-helios/assets/js/browser.min.js"></script>
+            <script src="/themes/html5up-helios/assets/js/breakpoints.min.js"></script>
+            <script src="/themes/html5up-helios/assets/js/util.js"></script>
+            <script src="/themes/html5up-helios/assets/js/main.js"></script>
+            <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/lib/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/lib/moment.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/fullcalendar.min.js') }}"></script>
+    
+    {# <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/locale-all.js') }}"></script> #}
+    
+    <script type="text/javascript">
+        $(function () {
+            $('#calendar-holder').fullCalendar({
+                header: {
+                    left: 'prev, next, today',
+                    center: 'title',
+                    right: 'month, basicWeek, basicDay'
+                },
+                lazyFetching: true,
+                navLinks: true,
+                eventSources: [
+                    {
+                        url: '/fc-load-events',
+                        type: 'POST',
+                        data: {
+                            filters: {}
+                        },
+                        error: function () {
+                            alert('There was an error while fetching FullCalendar!');
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+        {% endblock %}
+	</body>
+</html>

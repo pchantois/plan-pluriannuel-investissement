@@ -1,0 +1,11 @@
+{% extends 'base_' ~ ga_theme ~ '.html.twig' %}
+
+{% block title %}New CodeMaire{% endblock %}
+
+{% block body %}
+    <h1>Create new CodeMaire</h1>
+
+    {{ include('admin_code_maire/_form.html.twig') }}
+
+    <a href="{{ path('admin_code_maire_index') }}">back to list</a>
+{% endblock %}

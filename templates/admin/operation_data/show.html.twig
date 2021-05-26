@@ -1,0 +1,24 @@
+{% extends 'base_' ~ ga_theme ~ '.html.twig' %}
+
+{% block title %}Operation{% endblock %}
+
+{% block body %}
+    <article class="operation" id="operation">
+        <header>{{ operation_datum.operation.libelle }}</header>
+        <p id="reference">Département XXX - Direction XXX</p>
+        <section class="description">
+            <header>description de l’opération d’investissement</header>
+            <p>{{ operation_datum.operation.description }}</p>
+        </section>
+        <section class="estimation">
+            <header>estimation du coût de l’opération</header>
+            {# <p>{% include "admin/operation/ppi_parCategorie.html.twig" with {'items': ppi} %}</p> #}
+        </section>
+        <section class="notifications">
+            <header>remarques</header>
+            <p>{{ operation_datum.operation.commentaire }}</p>
+        </section>
+    </article>
+    
+    <a href="{{ path('operation_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base_' ~ ga_theme ~ '.html.twig' %}
+
+{% block title %}Edit PolitiquePub{% endblock %}
+
+{% block body %}
+    <h1>Edit PolitiquePub</h1>
+
+    {{ include('admin_politique_pub/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('admin_politique_pub_index') }}">back to list</a>
+
+    {{ include('admin_politique_pub/_delete_form.html.twig') }}
+{% endblock %}
