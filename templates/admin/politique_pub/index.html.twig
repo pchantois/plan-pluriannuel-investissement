@@ -1,0 +1,35 @@
+{% extends 'base_' ~ ga_theme ~ '.html.twig' %}
+
+{% block title %}PolitiquePub index{% endblock %}
+
+{% block body %}
+    <h1>PolitiquePub index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for politique_pub in politique_pubs %}
+            <tr>
+                <td>{{ politique_pub.id }}</td>
+                <td>{{ politique_pub.libelle }}</td>
+                <td>
+                    <a href="{{ path('admin_politique_pub_show', {'id': politique_pub.id}) }}">show</a>
+                    <a href="{{ path('admin_politique_pub_edit', {'id': politique_pub.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_politique_pub_new') }}">Create new</a>
+{% endblock %}

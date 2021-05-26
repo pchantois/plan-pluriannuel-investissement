@@ -1,0 +1,49 @@
+{% extends 'base_' ~ ga_theme ~ '.html.twig' %}
+
+{% block title %}Operations - Data{% endblock %}
+
+{% block body %}
+<article id="liste">
+    <h2>Liste des opérations</h2>
+    <table class="table-wrapper">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Montant</th>
+                <th>Annee</th>
+                <th>Type</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for operation_datum in operation_datas %}
+            <tr>
+                <td>{{ operation_datum.operation.code }}</td>
+                <td>{{ operation_datum.montant }}</td>
+                <td>{{ operation_datum.annee }}</td>
+                <td>{{ operation_datum.type ? 'Dépense' : 'Recette' }}</td>
+                <td>
+                    <a href="{{ path('admin_operation_data_show', {'id': operation_datum.id}) }}">show</a>
+                    <a href="{{ path('admin_operation_data_edit', {'id': operation_datum.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</article>
+<article id="ppi">
+    <h2>PPI</h2>
+    {# {% include "admin/operation/ppi_global.html.twig" with {'items': ppi} %} #}
+</article>
+{% endblock %}
+
+{% block javascripts %}
+<!-- Scripts -->
+    {{ parent() }}
+    <script src="{{asset('assets/js/table-scroll.min.js')}}"></script>
+    <script src="{{asset('assets/js/table-scroll-config.js')}}"></script>
+{% endblock %}

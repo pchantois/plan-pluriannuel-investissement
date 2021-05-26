@@ -1,0 +1,23 @@
+{% extends 'base_' ~ ga_theme ~ '.html.twig' %}
+
+{% block title %}ppi - {{ ga_theme }}{% endblock %}
+
+{% block body %}
+<section class="actions">
+</section>
+<article id="ppi">
+    {# <h2>{{ configs.site.libelle.mainTitle }}</h2> #}
+    {% include "admin/operation/ppi_parDepartement.html.twig" with {'items': ppi, 'mode': mode} %}
+</article>
+
+    {# {% include "admin/operation/ppi_global.html.twig" with {'items': ppi} %} #}
+    {# {% include "admin/operation/ppi_parCategorie.html.twig" with {'items': ppi2} %} #}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/fixedcolumns/3.3.1/js/dataTables.fixedColumns.min.js"></script>
+    <script type="text/javascript" language="javascript" src="{{ asset("assets/js/site.js") }}"></script>
+{% endblock %}

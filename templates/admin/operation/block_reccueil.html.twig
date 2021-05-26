@@ -1,0 +1,50 @@
+<article class="operation" id="operation">
+    <header><h3>{{ operation.libelle|upper }}</h3></header>
+    <p id="reference">
+        {% if operation.user %}
+            {{operation.user.departement}}
+        {% else %}
+            Département...
+        {% endif %}
+            - 
+        {% if operation.user %}
+            {{operation.user.direction}}
+        {% else %}
+            Direction...
+        {% endif %}
+    </p>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <section class="illustration">
+                    <img src="https://picsum.photos/seed/picsum/700/200" />
+                </section>
+                <section class="estimation">
+                    <header>{{configs.site.libelle.estimation|capitalize}}</header>
+                    <label>{{configs.site.libelle.coutparti|capitalize}} :
+                        {% if operation.coutParti %}
+                                OUI
+                            {% else %}
+                                NON
+                        {% endif %}<br />
+                        {{configs.site.libelle.coutTotal|capitalize}} :{{ operation.coutTotal }}
+                    </label>
+                    <p>{% include "admin/operation_data/estimation.html.twig" with {'financements': operation.operationData, 'version': version, 'periode_ref': 2020} %}</p>
+                </section>
+            </div>
+            <div class="col">
+                <section class="description">
+                    <header>{{configs.site.libelle.description|capitalize}}</header>
+                    <p>{{ operation.description|nl2br }}</p>
+                </section>
+                <section class="dateDeLivraison">
+                    <label>{{configs.site.libelle.datelivraison|capitalize}} : {{ operation.DateLivraison|date("d/m/Y") }}</label>
+                </section>
+                <section class="notifications">
+                    <header>{{configs.site.libelle.remarques|capitalize}}</header>
+                    <p>{{ operation.commentaire|nl2br }}</p>
+                </section>
+            </div>
+        </div>
+    </div>
+</article>

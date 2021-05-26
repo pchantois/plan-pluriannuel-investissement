@@ -1,0 +1,62 @@
+{{ form_start(form) }}
+    {# {{ form_widget(form) }} #}
+<div id="operation">
+    <div>
+        {{ form_label(form.code) }}
+        {{ form_widget(form.code) }}
+        {{ form_errors(form.code) }}
+    </div>
+    <div>
+        {{ form_label(form.libelle) }}
+        {{ form_widget(form.libelle) }}
+        {{ form_errors(form.libelle) }}
+    </div>
+    <div>
+        {{ form_label(form.description) }}
+        {{ form_widget(form.description) }}
+        {{ form_errors(form.description) }}
+    </div>
+    <div>
+        {{ form_label(form.commentaire, 'Remarque') }}
+        {{ form_widget(form.commentaire) }}
+        {{ form_errors(form.commentaire) }}
+    </div>
+    <div>
+        {{ form_label(form.regroupementOpe) }}
+        {{ form_widget(form.regroupementOpe) }}
+        {{ form_errors(form.regroupementOpe) }}
+    </div>
+    <div>
+        {{ form_label(form.codeMaire) }}
+        {{ form_widget(form.codeMaire) }}
+        {{ form_errors(form.codeMaire) }}
+    </div>
+    <div>
+        {{ form_label(form.natureOpe) }}
+        {{ form_widget(form.natureOpe) }}
+        {{ form_errors(form.natureOpe) }}
+    </div>
+    <div>
+        {{ form_label(form.politiquePub) }}
+        {{ form_widget(form.politiquePub) }}
+        {{ form_errors(form.politiquePub) }}
+    </div>
+    <div style="display: none;">
+        {{ form_label(form.dob) }}
+        {{ form_widget(form.dob) }}
+        {{ form_errors(form.dob) }}
+    </div>
+    <div style="display: none;">
+        {{ form_label(form.recueil) }}
+        {{ form_widget(form.recueil) }}
+        {{ form_errors(form.recueil) }}
+    </div>
+    <div style="display: none;">
+        {{ form_label(form.operationData) }}
+        {{ form_widget(form.operationData) }}
+        {{ form_errors(form.operationData) }}
+    </div>
+        <button class="btn">{{ button_label|default('Save') }}</button>
+</div>
+        
+{{ form_end(form) }}

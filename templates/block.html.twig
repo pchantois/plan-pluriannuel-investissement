@@ -1,0 +1,20 @@
+<section id="blocktype">
+    <header></header>
+    <article class="category">
+        <article class="item">
+            <img src="" alt="">
+            <header>{{ item.libelle }}</header>
+            <p>
+                {% if item.end is empty %}
+                    Le {{ item.start|localizeddate('none', 'none', null, null, "dd MMMM Y") }}
+                {% elseif item.start|localizeddate('none', 'none', null, null, "MMMM") is same as(item.end|localizeddate('none', 'none', null, null, "MMMM")) %}
+                    Du {{ item.start|localizeddate('none', 'none', null, null, "dd") }} au {{ item.end|localizeddate('long', 'none') }}
+                {% else %}
+                    Du {{ item.start|localizeddate('none', 'none', null, null, "dd MMMM Y") }} au {{ item.end|localizeddate('none', 'none', null, null, "dd MMMM Y") }}
+                {% endif %}
+            </p>
+            <footer></footer>
+        </article>
+        <footer></footer>
+    </article>
+</section>
