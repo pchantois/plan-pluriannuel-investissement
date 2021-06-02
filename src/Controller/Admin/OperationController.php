@@ -15,7 +15,7 @@ use Knp\Snappy\Pdf;
 use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
 
 /**
- * @Route("/operation")
+ * @Route("/")
  */
 class OperationController extends AbstractController
 {

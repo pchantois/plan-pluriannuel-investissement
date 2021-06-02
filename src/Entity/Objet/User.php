@@ -7,13 +7,13 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 
 use Doctrine\ORM\Mapping as ORM;
-use FOS\UserBundle\Model\User as BaseUser;
+// use FOS\UserBundle\Model\User as BaseUser;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\Objet\UserRepository")
- * @ORM\Table(name="fos_user")
+ * @ORM\Table(name="fos_user", schema="symfony_ppi")
  */
-class User extends BaseUser {
+class User {
 	/**
 	 * @ORM\Id()
 	 * @ORM\GeneratedValue()

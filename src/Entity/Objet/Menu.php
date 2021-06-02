@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\Objet\MenuRepository")
+ * @ORM\Table(schema="symfony_ppi")
  */
 class Menu
 {

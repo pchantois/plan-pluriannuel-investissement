@@ -1,0 +1,178 @@
+.sectionHead{
+	writing-mode: vertical-rl;
+	transform: rotate(180deg);
+	text-align: right;
+	background-image:radial-gradient(yellow, white);
+	height:100%;
+	font-weight:bold;
+	position: relative;
+	padding: 0 0 10px 0;
+	width: 2.25%;
+	margin: 0px;
+}
+.notifications{
+	position: relative;
+	height: 100%;
+	vertical-align: bottom;
+	margin: 0;
+	padding: 0px;
+}
+.notifications article{
+	position: relative;
+	margin: 0;
+	padding: 10px;
+	font-size: 80%;
+}
+.notifications article h4{
+	margin: 0 0 0.25em 0;
+	text-decoration: underline;
+	text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+.notifications article p{
+	margin: 0;
+	letter-spacing: -0.05em;
+	text-shadow: 0 1px 2px #555;
+}
+.sectionInfo{
+	position: relative;
+	width: 70%;
+	padding: 20px;
+}
+.sectionInfo article header{
+	text-shadow: 1px 1px 2px red, 0 0 1em black, 0 0 0.2em black;
+}
+.sectionInfo p {
+	margin: 0;
+}
+.sectionDate{
+	position: relative;
+}
+.hDate{
+	font-weight:bold;
+}
+.articleLeft{
+}
+.articleRight{
+}
+
+.main_content, .main_content section {
+	float: left;
+}
+
+.main_content {
+	width: 100%;
+	margin: 0px;
+	height: 100%;
+}
+
+#footer {
+	float: left;
+	width: 100%;
+}
+
+.no-sidebar {
+	height: 100%;
+}
+/*
+.page-wrapper {
+	height: 100%;
+}*/
+
+/*
+Gestion des événements
+ */
+.event .type, .event .agence, .event .sectionDate {
+	text-shadow: 0 1px 2px #555;
+	font-weight: bold;
+	font-style: italic;
+}
+.event .sectionDate {
+	margin-bottom: 1em;
+}
+/*
+Fin - Gestion des événements
+ */
+
+ /*
+ Modélisation d'opération
+ */
+ /*body {
+
+	background-color : whitesmoke;
+}*/
+.operation {
+	page-break-after: always;
+    width: 80%;
+	margin: 0 auto;
+  }
+
+.operation > header > h3 {
+	color: blue;
+	font-weight: bold;
+	text-align: left;
+    font-size: 22px !important;
+}
+
+.operation #reference{
+	font-size : 12px;
+	/* font-style: italic;	 */
+}
+
+.operation section header{
+	font-size : 18px;
+	color: black;
+	font-weight: bold;
+	text-decoration: underline;
+	/* text-transform: capitalize; */
+}
+
+.operation .illustration {
+	margin: 0 0 40px 0;
+}
+
+.operation .illustration img {
+	max-width: 550px;
+}
+
+.operation p{
+	text-align: justify;
+}
+
+.operation td {
+	text-align: right;
+}
+
+.operation .estimation label, .operation .dateDeLivraison label {
+	font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.operation .description header,.operation .estimation header,.operation .notifications header {
+	background-color: aliceblue;
+}
+
+.operation .description p, .operation .notifications p {
+	font-size: small;
+}
+
+#recueil_estimation tr.chargeNette {
+    font-weight: bold;
+    background-color: lightpink;
+}
+
+#recueil_estimation td:last-child, #recueil_estimation td:first-child {
+    font-weight: bold;
+}
+ /*
+ Fin - Modélisation d'opération
+ */
+
+ /* #ppi_global > tbody > tr {
+	 height: 50px;
+ } */
+
+ /* Ensure that the demo table scrolls */
+ /* th, td { white-space: nowrap; } */
+ .sf-minitoolbar, .sf-toolbarreset {
+	display: none !important;
+}
