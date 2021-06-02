@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\Admin\QuartierRepository")
+ * @ORM\Table(schema="symfony_ppi")
  */
 class Quartier
 {

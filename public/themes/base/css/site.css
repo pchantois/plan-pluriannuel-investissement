@@ -1,0 +1,738 @@
+
+	@page {  }
+	table { border-collapse:collapse; border-spacing:0; empty-cells:show }
+	td, th { vertical-align:top; font-size:12pt;}
+	h1, h2, h3, h4, h5, h6 { clear:both;}
+	ol, ul { margin:0; padding:0;}
+	li { list-style: none; margin:0; padding:0;}
+	/* "li span.odfLiEnd" - IE 7 issue*/
+	li span. { clear: both; line-height:0; width:0; height:0; margin:0; padding:0; }
+	span.footnodeNumber { padding-right:1em; }
+	span.annotation_style_by_filter { font-size:95%; font-family:Arial; background-color:#fff000;  margin:0; border:0; padding:0;  }
+	span.heading_numbering { margin-right: 0.8rem; }* { margin:0;}
+	.Standard_5f_2 { font-size:18pt; font-family:Liberation Sans; padding-top:0.125cm; padding-bottom:0.125cm; padding-left:0.25cm; padding-right:0.25cm; margin-left:0cm; margin-right:0cm; margin-top:0cm; margin-bottom:0cm; line-height:100%; text-indent:0cm; font-style:normal; text-shadow:none; text-decoration:none ! important; font-weight:normal; }
+	.gr1 { font-size:18pt; font-style:normal; font-weight:normal; line-height:100%; margin-bottom:0cm; margin-left:0.05cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.125cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.125cm; text-indent:0cm; text-shadow:none; font-family:Arial; text-decoration:none ! important; min-height:0.391cm;min-width:1.648cm;}
+	.gr10 { font-size:18pt; font-style:normal; font-weight:normal; line-height:100%; margin-bottom:0cm; margin-left:0.05cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.125cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.125cm; text-indent:0cm; text-shadow:none; font-family:Arial; text-decoration:none ! important; min-height:0.704cm;}
+	.gr11 { font-size:18pt; font-style:normal; font-weight:normal; line-height:100%; margin-bottom:0cm; margin-left:0.05cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.125cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.125cm; text-indent:0cm; text-shadow:none; font-family:Arial; text-decoration:none ! important; }
+	.gr12 { font-size:18pt; font-style:normal; font-weight:normal; line-height:100%; margin-bottom:0cm; margin-left:0.05cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.125cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.125cm; text-indent:0cm; text-shadow:none; font-family:Arial; text-decoration:none ! important; min-height:3.188cm;}
+	.gr13 { font-size:18pt; font-style:normal; font-weight:normal; line-height:100%; margin-bottom:0cm; margin-left:0.05cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.125cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.125cm; text-indent:0cm; text-shadow:none; font-family:Arial; text-decoration:none ! important; min-height:1.05cm;}
+	.gr14 { font-size:18pt; font-style:normal; font-weight:normal; line-height:100%; margin-bottom:0cm; margin-left:0.05cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.125cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.125cm; text-indent:0cm; text-shadow:none; font-family:Arial; text-decoration:none ! important; min-height:0.95cm;}
+	.gr15 { font-size:18pt; font-style:normal; font-weight:normal; line-height:100%; margin-bottom:0cm; margin-left:0.05cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.125cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.125cm; text-indent:0cm; text-shadow:none; font-family:Arial; text-decoration:none ! important; min-height:3.529cm;}
+	.gr16 { font-size:18pt; font-style:normal; font-weight:normal; line-height:100%; margin-bottom:0cm; margin-left:0.05cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.125cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.125cm; text-indent:0cm; text-shadow:none; font-family:Arial; text-decoration:none ! important; min-height:4.07cm;}
+	.gr17 { font-size:18pt; font-style:normal; font-weight:normal; line-height:100%; margin-bottom:0cm; margin-left:0.05cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.125cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.125cm; text-indent:0cm; text-shadow:none; font-family:Arial; text-decoration:none ! important; min-height:2.206cm;}
+	.gr18 { font-size:18pt; font-style:normal; font-weight:normal; line-height:100%; margin-bottom:0cm; margin-left:0.05cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.125cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.125cm; text-indent:0cm; text-shadow:none; font-family:Arial; text-decoration:none ! important; min-height:2.647cm;}
+	.gr19 { font-size:18pt; font-style:normal; font-weight:normal; line-height:100%; margin-bottom:0cm; margin-left:0.05cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.125cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.125cm; text-indent:0cm; text-shadow:none; font-family:Arial; text-decoration:none ! important; }
+	.gr2 { font-size:18pt; font-style:normal; font-weight:normal; line-height:100%; margin-bottom:0cm; margin-left:0.05cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.125cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.125cm; text-indent:0cm; text-shadow:none; font-family:Arial; text-decoration:none ! important; }
+	.gr20 { font-size:18pt; font-style:normal; font-weight:normal; line-height:100%; margin-bottom:0cm; margin-left:0.05cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.125cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.125cm; text-indent:0cm; text-shadow:none; font-family:Arial; text-decoration:none ! important; min-height:4.852cm;}
+	.gr3 { font-size:18pt; font-style:normal; font-weight:normal; line-height:100%; margin-bottom:0cm; margin-left:0.05cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.125cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.125cm; text-indent:0cm; text-shadow:none; font-family:Arial; text-decoration:none ! important; }
+	.gr4 { font-size:18pt; font-style:normal; font-weight:normal; line-height:100%; margin-bottom:0cm; margin-left:0.05cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.125cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.125cm; text-indent:0cm; text-shadow:none; font-family:Arial; text-decoration:none ! important; min-height:25.35cm;min-width:39.404cm;}
+	.gr5 { font-size:18pt; font-style:normal; font-weight:normal; line-height:100%; margin-bottom:0cm; margin-left:0.05cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.125cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.125cm; text-indent:0cm; text-shadow:none; font-family:Arial; text-decoration:none ! important; min-height:5.215cm;}
+	.gr6 { font-size:18pt; font-style:normal; font-weight:normal; line-height:100%; margin-bottom:0cm; margin-left:0.05cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.125cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.125cm; text-indent:0cm; text-shadow:none; font-family:Arial; text-decoration:none ! important; min-height:0.704cm;}
+	.gr7 { font-size:18pt; font-style:normal; font-weight:normal; line-height:100%; margin-bottom:0cm; margin-left:0.05cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.125cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.125cm; text-indent:0cm; text-shadow:none; font-family:Arial; text-decoration:none ! important; min-height:5.293cm;}
+	.gr8 { font-size:18pt; font-style:normal; font-weight:normal; line-height:100%; margin-bottom:0cm; margin-left:0.05cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.125cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.125cm; text-indent:0cm; text-shadow:none; font-family:Arial; text-decoration:none ! important; min-height:0.949cm;}
+	.gr9 { font-size:18pt; font-style:normal; font-weight:normal; line-height:100%; margin-bottom:0cm; margin-left:0.05cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.125cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.125cm; text-indent:0cm; text-shadow:none; font-family:Arial; text-decoration:none ! important; }
+	.standard { font-size:18pt; font-family:Arial; padding-top:0.125cm; padding-bottom:0.125cm; padding-left:0.25cm; padding-right:0.25cm; margin-left:0.05cm; margin-right:0cm; margin-top:0cm; margin-bottom:0cm; line-height:100%; text-indent:0cm; font-style:normal; text-shadow:none; text-decoration:none ! important; font-weight:normal; }
+	.P1 { text-align:center ! important; }
+	.P10 { margin-left:0cm; margin-right:0cm; margin-top:0.1cm; margin-bottom:0cm; text-align:right ! important; text-indent:0cm; writing-mode:lr-tb; }
+	.P11 { margin-left:0.014cm; margin-right:0cm; text-align:justify ! important; text-indent:0cm; letter-spacing:-0.016cm; }
+	.P12 { margin-left:0cm; margin-right:0cm; text-align:justify ! important; text-indent:0cm; letter-spacing:0.002cm; }
+	.P13 { margin-left:0cm; margin-right:0cm; text-align:justify ! important; text-indent:0cm; }
+	.P14 { margin-left:0cm; margin-right:0cm; text-indent:0cm; }
+	.P15 { margin-left:0cm; margin-right:0cm; text-align:center ! important; text-indent:0cm; }
+	.P16 { margin-left:0cm; margin-right:0cm; text-align:justify ! important; text-indent:0cm; }
+	.P17 { margin-left:0cm; margin-right:0cm; text-align:justify ! important; text-indent:0cm; letter-spacing:-0.012cm; }
+	.P18 { margin-left:0cm; margin-right:0cm; text-align:justify ! important; text-indent:0cm; letter-spacing:-0.018cm; }
+	.P19 { margin-left:0cm; margin-right:0cm; text-align:left ! important; text-indent:0cm; letter-spacing:-0.018cm; }
+	.P2 { text-align:center ! important; }
+	.P20 { margin-left:0cm; margin-right:0cm; margin-top:0cm; margin-bottom:0cm; line-height:100%; text-align:justify ! important; text-indent:0cm; }
+	.P21 { margin-left:0cm; margin-right:0cm; margin-top:0cm; margin-bottom:0cm; line-height:100%; text-align:justify ! important; text-indent:0cm; }
+	.P22 { margin-left:0cm; margin-right:0cm; margin-top:0cm; margin-bottom:0cm; line-height:100%; text-indent:0cm; }
+	.P23 { margin-left:0cm; margin-right:0cm; margin-top:0cm; margin-bottom:0cm; line-height:100%; text-align:left ! important; text-indent:0cm; }
+	.P24 { margin-left:0cm; margin-right:0cm; margin-top:0cm; margin-bottom:0cm; line-height:100%; text-align:left ! important; text-indent:0cm; letter-spacing:-0.026cm; }
+	.P25 { margin-left:0cm; margin-right:0cm; margin-top:0cm; margin-bottom:0cm; line-height:100%; text-align:left ! important; text-indent:0cm; letter-spacing:-0.008cm; }
+	.P26 { margin-left:0cm; margin-right:0cm; margin-top:0cm; margin-bottom:0cm; line-height:100%; text-align:left ! important; text-indent:0cm; writing-mode:lr-tb; }
+	.P27 { margin-top:0cm; margin-bottom:0cm; text-align:justify ! important; writing-mode:page; }
+	.P28 { margin-top:0cm; margin-bottom:0cm; text-align:justify ! important; writing-mode:page; font-size:18pt; }
+	.P29 { text-align:center ! important; writing-mode:lr-tb; }
+	.P3 { text-align:center ! important; }
+	.P30 { text-align:justify ! important; font-family:Georgia; font-size:11pt; letter-spacing:normal; font-weight:normal; }
+	.P31 { text-align:center ! important; color:#ed1515; font-family:Georgia; font-size:12pt; }
+	.P32 { text-align:center ! important; letter-spacing:-0.014cm; }
+	.P33 { margin-left:0cm; margin-right:0cm; margin-top:0cm; margin-bottom:0cm; text-align:justify ! important; text-indent:0cm; }
+	.P34 { margin-left:0cm; margin-right:0cm; margin-top:0cm; margin-bottom:0cm; text-align:left ! important; text-indent:0cm; }
+	.P35 { margin-top:0cm; margin-bottom:0cm; text-align:justify ! important; writing-mode:page; font-size:18pt; }
+	.P36 { text-align:center ! important; }
+	.P37 { text-align:right ! important; }
+	.P38 { text-align:justify ! important; }
+	.P39 { text-align:justify ! important; }
+	.P4 { margin-left:0.014cm; margin-right:0cm; text-align:center ! important; text-indent:0cm; letter-spacing:-0.04cm; background-color:transparent; }
+	.P40 { text-align:justify ! important; font-family:Georgia; font-size:11pt; letter-spacing:-0.01cm; font-weight:normal; }
+	.P41 { text-align:center ! important; color:#ed1515; font-family:Georgia; font-size:12pt; }
+	.P42 { text-align:justify ! important; letter-spacing:-0.014cm; }
+	.P43 { text-align:right ! important; letter-spacing:-0.014cm; }
+	.P44 { text-align:justify ! important; letter-spacing:-0.01cm; }
+	.P45 { text-align:center ! important; writing-mode:lr-tb; }
+	.P46 { text-align:justify ! important; font-family:Georgia; font-size:11pt; letter-spacing:-0.01cm; font-weight:normal; }
+	.P47 { text-align:justify ! important; writing-mode:lr-tb; }
+	.P48 { text-align:justify ! important; writing-mode:lr-tb; color:#000000; font-family:Georgia; font-size:11pt; letter-spacing:-0.01cm; font-style:normal; font-weight:normal; }
+	.P49 { text-align:justify ! important; font-family:Georgia; font-size:11pt; letter-spacing:-0.01cm; font-style:normal; font-weight:normal; }
+	.P5 { text-align:justify ! important; }
+	.P50 { text-align:center ! important; letter-spacing:0.006cm; }
+	.P51 { text-align:right ! important; letter-spacing:0.006cm; }
+	.P52 { letter-spacing:0.006cm; }
+	.P53 { text-align:left ! important; letter-spacing:0.006cm; }
+	.P6 { text-align:center ! important; color:#000000; font-family:Arial; font-size:9pt; text-decoration:none ! important; font-weight:normal; }
+	.P7 { text-align:left ! important; }
+	.P8 { margin-left:0cm; margin-right:0.1cm; margin-top:0cm; margin-bottom:0cm; line-height:100%; text-align:center ! important; text-indent:0cm; font-family:Georgia; font-size:12pt; }
+	.P9 { margin-left:0cm; margin-right:0cm; margin-top:0.1cm; margin-bottom:0cm; text-align:right ! important; text-indent:0cm; }
+	.blue1 { border-width:0.0133cm; border-style:solid; border-color:#ffffff; font-size:18pt; line-height:100%; margin-bottom:0cm; margin-left:0cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.13cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.13cm; text-indent:0cm; font-family:Liberation Sans; }
+	.blue2 { border-width:0.0133cm; border-style:solid; border-color:#ffffff; font-size:18pt; line-height:100%; margin-bottom:0cm; margin-left:0cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.13cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.13cm; text-indent:0cm; font-family:Liberation Sans; }
+	.blue3 { border-width:0.0133cm; border-style:solid; border-color:#ffffff; font-size:18pt; line-height:100%; margin-bottom:0cm; margin-left:0cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.13cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.13cm; text-indent:0cm; font-family:Liberation Sans; }
+	.bw1 { border-width:0.0133cm; border-style:solid; border-color:#ffffff; font-size:18pt; line-height:100%; margin-bottom:0cm; margin-left:0cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.13cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.13cm; text-indent:0cm; font-family:Liberation Sans; }
+	.bw2 { border-width:0.0133cm; border-style:solid; border-color:#ffffff; font-size:18pt; line-height:100%; margin-bottom:0cm; margin-left:0cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.13cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.13cm; text-indent:0cm; font-family:Liberation Sans; }
+	.bw3 { border-width:0.0133cm; border-style:solid; border-color:#ffffff; font-size:18pt; line-height:100%; margin-bottom:0cm; margin-left:0cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.13cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.13cm; text-indent:0cm; font-family:Liberation Sans; }
+	.ce1 { margin-left:0.014cm; margin-right:0cm; text-align:center ! important; text-indent:0cm; color:#0061b1; font-family:Arial; font-size:20pt; letter-spacing:-0.04cm; font-weight:bold; background-color:transparent; }
+	.ce10 { margin-left:0cm; margin-right:0cm; text-indent:0cm; font-family:Georgia; font-size:10.5pt; font-weight:bold; }
+	.ce100 { text-align:center ! important; }
+	.ce101 { text-align:center ! important; border-left-style:none; border-right-width:0.0133cm; border-right-style:solid; border-right-color:#000000; border-top-width:0.0133cm; border-top-style:solid; border-top-color:#000000; border-bottom-width:0.0133cm; border-bottom-style:solid; border-bottom-color:#000000; font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.ce102 { text-align:center ! important; border-width:0.0133cm; border-style:solid; border-color:#000000; font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.ce103 { text-align:justify ! important; font-family:Georgia; font-size:9pt; }
+	.ce104 { text-align:left ! important; font-family:Georgia; font-size:9pt; }
+	.ce105 { text-align:justify ! important; font-family:Georgia; }
+	.ce106 { font-size:18pt; }
+	.ce107 { text-align:center ! important; font-family:Georgia; letter-spacing:-0.038cm; background-color:transparent; }
+	.ce108 { text-align:justify ! important; font-family:Georgia; font-size:10pt; }
+	.ce109 { text-align:center ! important; border-width:0.0133cm; border-style:solid; border-color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:0.006cm; font-weight:bold; }
+	.ce11 { margin-left:0cm; margin-right:0cm; text-align:center ! important; text-indent:0cm; color:#000000; font-family:Georgia; font-size:10.5pt; font-weight:bold; }
+	.ce110 { border-width:0.0133cm; border-style:solid; border-color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:0.006cm; }
+	.ce111 { text-align:right ! important; border-width:0.0133cm; border-style:solid; border-color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:0.006cm; font-weight:bold; }
+	.ce112 { border-width:0.0133cm; border-style:solid; border-color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:0.006cm; font-weight:bold; }
+	.ce113 { text-align:right ! important; border-width:0.0133cm; border-style:solid; border-color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:0.006cm; }
+	.ce114 { text-align:center ! important; border-width:0.0133cm; border-style:solid; border-color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:0.006cm; }
+	.ce115 { text-align:left ! important; border-width:0.0133cm; border-style:solid; border-color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:0.006cm; font-weight:bold; }
+	.ce116 { text-align:center ! important; color:#ff0000; font-family:Georgia; }
+	.ce117 { text-align:center ! important; font-size:12pt; }
+	.ce12 { margin-left:0cm; margin-right:0cm; text-align:justify ! important; text-indent:0cm; font-family:Georgia; font-size:10pt; }
+	.ce13 { margin-left:0cm; margin-right:0cm; text-indent:0cm; font-family:Georgia; font-size:10.5pt; }
+	.ce14 { margin-left:0cm; margin-right:0cm; text-align:justify ! important; text-indent:0cm; font-family:Georgia; font-size:10.5pt; }
+	.ce15 { margin-left:0cm; margin-right:0cm; text-align:justify ! important; text-indent:0cm; font-family:Georgia; font-size:10.5pt; font-weight:normal; }
+	.ce16 { margin-left:0cm; margin-right:0cm; text-align:justify ! important; text-indent:0cm; font-family:Georgia; font-size:10.5pt; letter-spacing:-0.012cm; }
+	.ce17 { margin-left:0cm; margin-right:0cm; text-align:justify ! important; text-indent:0cm; font-family:Georgia; font-size:10.5pt; letter-spacing:-0.018cm; }
+	.ce18 { margin-left:0cm; margin-right:0cm; margin-top:0cm; margin-bottom:0cm; line-height:100%; text-align:justify ! important; text-indent:0cm; font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.ce19 { margin-left:0cm; margin-right:0cm; margin-top:0cm; margin-bottom:0cm; line-height:100%; text-align:justify ! important; text-indent:0cm; font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.ce20 { margin-left:0cm; margin-right:0cm; margin-top:0cm; margin-bottom:0cm; line-height:100%; text-align:justify ! important; text-indent:0cm; color:#000000; font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.ce21 { margin-left:0cm; margin-right:0cm; margin-top:0cm; margin-bottom:0cm; line-height:100%; text-align:justify ! important; text-indent:0cm; font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.ce22 { margin-left:0cm; margin-right:0cm; margin-top:0cm; margin-bottom:0cm; line-height:100%; text-align:justify ! important; text-indent:0cm; font-family:Georgia; font-size:10pt; font-weight:normal; }
+	.ce23 { margin-left:0cm; margin-right:0cm; margin-top:0cm; margin-bottom:0cm; line-height:100%; text-indent:0cm; font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.ce24 { margin-left:0cm; margin-right:0cm; margin-top:0cm; margin-bottom:0cm; line-height:100%; text-align:left ! important; text-indent:0cm; font-family:Georgia; font-size:10pt; font-weight:normal; }
+	.ce25 { margin-left:0cm; margin-right:0cm; margin-top:0cm; margin-bottom:0cm; line-height:100%; text-indent:0cm; font-family:Georgia; font-size:10pt; font-weight:normal; }
+	.ce26 { margin-left:0cm; margin-right:0cm; margin-top:0cm; margin-bottom:0cm; line-height:100%; text-align:justify ! important; text-indent:0cm; font-family:Georgia; font-size:10pt; letter-spacing:-0.026cm; font-weight:normal; }
+	.ce27 { margin-left:0cm; margin-right:0cm; margin-top:0cm; margin-bottom:0cm; line-height:100%; text-align:left ! important; text-indent:0cm; font-family:Georgia; font-size:10pt; letter-spacing:-0.008cm; font-weight:normal; }
+	.ce28 { margin-left:0cm; margin-right:0cm; text-align:justify ! important; text-indent:0cm; font-family:Georgia; font-size:12pt; font-weight:bold; }
+	.ce29 { margin-left:0.014cm; margin-right:0cm; text-align:justify ! important; text-indent:0cm; font-size:10pt; font-weight:bold; }
+	.ce3 { margin-left:0cm; margin-right:0cm; margin-top:0.1cm; margin-bottom:0cm; text-align:right ! important; text-indent:0cm; color:#000000; font-family:Georgia; font-size:9pt; font-weight:bold; }
+	.ce30 { text-align:justify ! important; }
+	.ce31 { color:#000000; font-weight:normal; }
+	.ce32 { text-align:justify ! important; font-family:Georgia; font-size:14pt; }
+	.ce33 { font-size:18pt; }
+	.ce34 { font-size:18pt; }
+	.ce35 { text-align:justify ! important; color:#232629; font-size:10pt; }
+	.ce36 { text-align:justify ! important; font-size:10pt; }
+	.ce37 { text-align:justify ! important; font-family:Georgia; font-size:18pt; }
+	.ce38 { text-align:center ! important; }
+	.ce39 { font-size:12pt; font-weight:bold; }
+	.ce4 { margin-left:0cm; margin-right:0cm; margin-top:0.1cm; margin-bottom:0cm; text-align:right ! important; text-indent:0cm; color:#000000; font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.ce40 { text-align:justify ! important; font-family:Georgia; }
+	.ce41 { text-align:center ! important; font-size:10pt; }
+	.ce42 { text-align:center ! important; border-left-style:none; border-right-width:0.0133cm; border-right-style:solid; border-right-color:#000000; border-top-style:none; border-bottom-width:0.0133cm; border-bottom-style:solid; border-bottom-color:#000000; font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.ce43 { text-align:center ! important; border-left-style:none; border-right-width:0.0133cm; border-right-style:solid; border-right-color:#000000; border-top-width:0.0133cm; border-top-style:solid; border-top-color:#000000; border-bottom-width:0.0133cm; border-bottom-style:solid; border-bottom-color:#000000; font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.ce44 { text-align:center ! important; border-left-width:0.0133cm; border-left-style:solid; border-left-color:#000000; border-right-width:0.0133cm; border-right-style:solid; border-right-color:#000000; border-top-style:none; border-bottom-width:0.0133cm; border-bottom-style:solid; border-bottom-color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:-0.014cm; font-weight:bold; }
+	.ce45 { text-align:center ! important; border-width:0.0133cm; border-style:solid; border-color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:-0.014cm; font-weight:normal; }
+	.ce46 { font-size:12pt; }
+	.ce47 { text-align:left ! important; font-size:9pt; }
+	.ce48 { text-align:justify ! important; font-family:Georgia; font-size:10pt; font-style:normal; font-weight:normal; }
+	.ce49 { text-align:justify ! important; font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.ce5 { margin-left:0cm; margin-right:0cm; margin-top:0.1cm; margin-bottom:0cm; text-align:right ! important; text-indent:0cm; color:#000000; font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.ce50 { text-align:justify ! important; font-family:Georgia; font-size:18pt; }
+	.ce51 { text-align:justify ! important; font-size:18pt; font-weight:bold; }
+	.ce52 { text-align:justify ! important; font-family:Georgia; font-size:18pt; }
+	.ce53 { text-align:justify ! important; font-size:18pt; }
+	.ce54 { text-align:justify ! important; font-family:Georgia; font-size:11pt; font-weight:normal; }
+	.ce55 { text-align:justify ! important; color:#e36b51; font-size:12pt; font-weight:bold; }
+	.ce56 { text-align:justify ! important; border-style:none; font-family:Georgia; font-size:10pt; }
+	.ce57 { text-align:center ! important; border-width:0.0133cm; border-style:solid; border-color:#000000; font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.ce58 { text-align:center ! important; border-left-style:none; border-right-width:0.0133cm; border-right-style:solid; border-right-color:#000000; border-top-width:0.0133cm; border-top-style:solid; border-top-color:#000000; border-bottom-width:0.0133cm; border-bottom-style:solid; border-bottom-color:#000000; font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.ce59 { text-align:right ! important; border-width:0.0133cm; border-style:solid; border-color:#000000; font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.ce6 { margin-left:0cm; margin-right:0cm; margin-top:0.1cm; margin-bottom:0cm; text-align:right ! important; text-indent:0cm; color:#000000; font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.ce60 { text-align:right ! important; border-left-style:none; border-right-width:0.0133cm; border-right-style:solid; border-right-color:#000000; border-top-style:none; border-bottom-width:0.0133cm; border-bottom-style:solid; border-bottom-color:#000000; font-family:Georgia; font-size:10pt; }
+	.ce61 { text-align:right ! important; border-width:0.0133cm; border-style:solid; border-color:#000000; font-family:Georgia; font-size:10pt; }
+	.ce62 { text-align:right ! important; border-left-width:0.0133cm; border-left-style:solid; border-left-color:#000000; border-right-width:0.0133cm; border-right-style:solid; border-right-color:#000000; border-top-style:none; border-bottom-width:0.0133cm; border-bottom-style:solid; border-bottom-color:#000000; font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.ce63 { text-align:justify ! important; font-size:18pt; font-weight:bold; }
+	.ce64 { text-align:justify ! important; font-family:Georgia; font-size:15pt; }
+	.ce65 { text-align:justify ! important; font-size:18pt; }
+	.ce66 { margin-left:0cm; margin-right:0cm; text-align:justify ! important; text-indent:0cm; font-family:Georgia; font-size:12pt; }
+	.ce67 { text-align:justify ! important; font-family:Georgia; font-size:12pt; }
+	.ce68 { text-align:justify ! important; font-family:Georgia; font-size:9pt; }
+	.ce69 { font-family:Georgia; font-size:9pt; }
+	.ce7 { margin-left:0.014cm; margin-right:0cm; text-align:justify ! important; text-indent:0cm; font-family:Georgia; font-size:12pt; letter-spacing:-0.016cm; font-weight:bold; }
+	.ce70 { font-family:Georgia; }
+	.ce71 { text-align:justify ! important; font-family:Georgia; font-size:26pt; font-weight:bold; }
+	.ce72 { text-align:justify ! important; font-family:Georgia; font-size:18pt; }
+	.ce73 { text-align:justify ! important; font-family:Georgia; font-size:12pt; }
+	.ce74 { text-align:justify ! important; color:#e36b51; font-family:Georgia; font-size:8pt; font-weight:bold; }
+	.ce75 { color:#000000; font-weight:normal; }
+	.ce76 { text-align:justify ! important; font-family:Georgia; font-size:12pt; font-weight:bold; }
+	.ce77 { text-align:justify ! important; font-family:Georgia; font-size:8pt; }
+	.ce78 { text-align:justify ! important; color:#e36b51; font-family:Georgia; font-size:12pt; font-weight:bold; }
+	.ce79 { text-align:center ! important; border-style:none; }
+	.ce8 { margin-left:0cm; margin-right:0cm; text-align:justify ! important; text-indent:0cm; font-family:Georgia; font-size:12pt; letter-spacing:0.002cm; font-weight:bold; }
+	.ce80 { text-align:center ! important; color:#ed1515; font-family:Georgia; font-size:12pt; }
+	.ce81 { text-align:center ! important; font-family:Georgia; font-size:9pt; }
+	.ce82 { text-align:center ! important; border-width:0.0133cm; border-style:solid; border-color:#000000; font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.ce83 { text-align:center ! important; border-width:0.0133cm; border-style:solid; border-color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:-0.014cm; }
+	.ce84 { text-align:justify ! important; font-family:Georgia; font-size:10pt; }
+	.ce85 { text-align:justify ! important; font-family:Georgia; font-size:18pt; }
+	.ce86 { text-align:justify ! important; color:#e36b51; font-family:Georgia; font-size:8pt; font-weight:bold; }
+	.ce87 { text-align:center ! important; font-family:Georgia; font-size:10pt; }
+	.ce88 { text-align:justify ! important; border-left-style:none; border-right-width:0.0133cm; border-right-style:solid; border-right-color:#000000; border-top-style:none; border-bottom-width:0.0133cm; border-bottom-style:solid; border-bottom-color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:-0.014cm; }
+	.ce89 { text-align:center ! important; border-left-style:none; border-right-width:0.0133cm; border-right-style:solid; border-right-color:#000000; border-top-width:0.0133cm; border-top-style:solid; border-top-color:#000000; border-bottom-width:0.0133cm; border-bottom-style:solid; border-bottom-color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:-0.014cm; font-weight:bold; }
+	.ce9 { margin-left:0cm; margin-right:0cm; text-align:justify ! important; text-indent:0cm; font-family:Georgia; font-size:10.5pt; font-weight:bold; }
+	.ce90 { text-align:center ! important; border-width:0.0133cm; border-style:solid; border-color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:-0.014cm; font-weight:bold; }
+	.ce91 { text-align:justify ! important; border-width:0.0133cm; border-style:solid; border-color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:-0.014cm; font-weight:bold; }
+	.ce92 { text-align:right ! important; border-left-width:0.0133cm; border-left-style:solid; border-left-color:#000000; border-right-width:0.0133cm; border-right-style:solid; border-right-color:#000000; border-top-style:none; border-bottom-width:0.0133cm; border-bottom-style:solid; border-bottom-color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:-0.014cm; font-weight:bold; }
+	.ce93 { text-align:right ! important; border-left-style:none; border-right-width:0.0133cm; border-right-style:solid; border-right-color:#000000; border-top-style:none; border-bottom-width:0.0133cm; border-bottom-style:solid; border-bottom-color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:-0.014cm; }
+	.ce94 { text-align:right ! important; border-width:0.0133cm; border-style:solid; border-color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:-0.014cm; }
+	.ce95 { text-align:right ! important; border-width:0.0133cm; border-style:solid; border-color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:-0.014cm; font-weight:bold; }
+	.ce96 { text-align:left ! important; font-family:Georgia; font-size:10pt; }
+	.ce97 { text-align:justify ! important; font-family:Georgia; font-size:9pt; }
+	.ce98 { font-family:Georgia; font-size:9pt; }
+	.ce99 { text-align:justify ! important; font-family:Georgia; font-size:11pt; letter-spacing:-0.01cm; font-weight:normal; }
+	.default { padding-top:0.13cm; padding-bottom:0.13cm; padding-left:0.25cm; padding-right:0.25cm; margin-left:0cm; margin-right:0cm; margin-top:0cm; margin-bottom:0cm; line-height:100%; text-indent:0cm; border-width:0.0133cm; border-style:solid; border-color:#ffffff; font-family:Liberation Sans; font-size:18pt; }
+	.gray1 { border-width:0.0133cm; border-style:solid; border-color:#ffffff; font-size:18pt; line-height:100%; margin-bottom:0cm; margin-left:0cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.13cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.13cm; text-indent:0cm; font-family:Liberation Sans; }
+	.gray2 { border-width:0.0133cm; border-style:solid; border-color:#ffffff; font-size:18pt; line-height:100%; margin-bottom:0cm; margin-left:0cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.13cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.13cm; text-indent:0cm; font-family:Liberation Sans; }
+	.gray3 { border-width:0.0133cm; border-style:solid; border-color:#ffffff; font-size:18pt; line-height:100%; margin-bottom:0cm; margin-left:0cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.13cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.13cm; text-indent:0cm; font-family:Liberation Sans; }
+	.orange1 { border-width:0.0133cm; border-style:solid; border-color:#ffffff; font-size:18pt; line-height:100%; margin-bottom:0cm; margin-left:0cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.13cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.13cm; text-indent:0cm; font-family:Liberation Sans; }
+	.orange2 { border-width:0.0133cm; border-style:solid; border-color:#ffffff; font-size:18pt; line-height:100%; margin-bottom:0cm; margin-left:0cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.13cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.13cm; text-indent:0cm; font-family:Liberation Sans; }
+	.orange3 { border-width:0.0133cm; border-style:solid; border-color:#ffffff; font-size:18pt; line-height:100%; margin-bottom:0cm; margin-left:0cm; margin-right:0cm; margin-top:0cm; padding-bottom:0.13cm; padding-left:0.25cm; padding-right:0.25cm; padding-top:0.13cm; text-indent:0cm; font-family:Liberation Sans; }
+	.co1 { width:19.599cm; }
+	.co10 { width:5.3cm; }
+	.co100 { width:1.899cm; }
+	.co101 { width:2.408cm; }
+	.co102 { width:2.411cm; }
+	.co103 { width:3.712cm; }
+	.co104 { width:14.411cm; }
+	.co105 { width:5.845cm; }
+	.co106 { width:2.024cm; }
+	.co107 { width:2.302cm; }
+	.co108 { width:2.719cm; }
+	.co109 { width:3.91cm; }
+	.co11 { width:4.146cm; }
+	.co110 { width:14.389cm; }
+	.co111 { width:4.007cm; }
+	.co112 { width:10.204cm; }
+	.co113 { width:4.194cm; }
+	.co114 { width:4.259cm; }
+	.co115 { width:15.788cm; }
+	.co116 { width:11.387cm; }
+	.co117 { width:4.31cm; }
+	.co118 { width:11.39cm; }
+	.co119 { width:4.223cm; }
+	.co12 { width:2.557cm; }
+	.co120 { width:11.38cm; }
+	.co121 { width:4.293cm; }
+	.co122 { width:11.391cm; }
+	.co123 { width:4.301cm; }
+	.co124 { width:14.805cm; }
+	.co125 { width:10.945cm; }
+	.co126 { width:4.054cm; }
+	.co127 { width:10.944cm; }
+	.co128 { width:4.058cm; }
+	.co129 { width:10.941cm; }
+	.co13 { width:4.397cm; }
+	.co130 { width:4.04cm; }
+	.co131 { width:4.06cm; }
+	.co132 { width:4.8cm; }
+	.co133 { width:13.327cm; }
+	.co134 { width:15.279cm; }
+	.co135 { width:15.003cm; }
+	.co136 { width:4.401cm; }
+	.co137 { width:2.688cm; }
+	.co138 { width:3.708cm; }
+	.co139 { width:14.61cm; }
+	.co14 { width:5.054cm; }
+	.co140 { width:4.601cm; }
+	.co141 { width:4.591cm; }
+	.co142 { width:2.24cm; }
+	.co143 { width:2.781cm; }
+	.co144 { width:3.407cm; }
+	.co145 { width:4.292cm; }
+	.co146 { width:2.531cm; }
+	.co147 { width:1.783cm; }
+	.co148 { width:4.405cm; }
+	.co149 { width:14.098cm; }
+	.co15 { width:3.953cm; }
+	.co150 { width:1.399cm; }
+	.co151 { width:7.09cm; }
+	.co16 { width:2.862cm; }
+	.co17 { width:4.517cm; }
+	.co18 { width:16.491cm; }
+	.co19 { width:19.049cm; }
+	.co2 { width:1.265cm; }
+	.co20 { width:16.26cm; }
+	.co21 { width:16.198cm; }
+	.co22 { width:9.463cm; }
+	.co23 { width:4.099cm; }
+	.co24 { width:3.969cm; }
+	.co25 { width:14.416cm; }
+	.co26 { width:3.995cm; }
+	.co27 { width:14.498cm; }
+	.co28 { width:14.204cm; }
+	.co29 { width:14.006cm; }
+	.co3 { width:1.267cm; }
+	.co30 { width:4.999cm; }
+	.co31 { width:3.208cm; }
+	.co32 { width:14.42cm; }
+	.co33 { width:14.495cm; }
+	.co34 { width:3.907cm; }
+	.co35 { width:9.748cm; }
+	.co36 { width:4.851cm; }
+	.co37 { width:3.375cm; }
+	.co38 { width:3.112cm; }
+	.co39 { width:2.293cm; }
+	.co4 { width:2.355cm; }
+	.co40 { width:2.292cm; }
+	.co41 { width:2.275cm; }
+	.co42 { width:2.937cm; }
+	.co43 { width:3.678cm; }
+	.co44 { width:10.28cm; }
+	.co45 { width:5.12cm; }
+	.co46 { width:10.698cm; }
+	.co47 { width:4.494cm; }
+	.co48 { width:4.497cm; }
+	.co49 { width:15.192cm; }
+	.co5 { width:4.367cm; }
+	.co50 { width:3.204cm; }
+	.co51 { width:9.927cm; }
+	.co52 { width:4.944cm; }
+	.co53 { width:11.223cm; }
+	.co54 { width:4.961cm; }
+	.co55 { width:11.236cm; }
+	.co56 { width:4.977cm; }
+	.co57 { width:7.794cm; }
+	.co58 { width:13.285cm; }
+	.co59 { width:1.769cm; }
+	.co6 { width:3.76cm; }
+	.co60 { width:10.096cm; }
+	.co61 { width:5.005cm; }
+	.co62 { width:10.104cm; }
+	.co63 { width:4.848cm; }
+	.co64 { width:14.974cm; }
+	.co65 { width:13cm; }
+	.co66 { width:14.612cm; }
+	.co67 { width:14.761cm; }
+	.co68 { width:3.951cm; }
+	.co69 { width:3.493cm; }
+	.co7 { width:3.376cm; }
+	.co70 { width:5.756cm; }
+	.co71 { width:4.012cm; }
+	.co72 { width:13.798cm; }
+	.co73 { width:0.6cm; }
+	.co74 { width:4.009cm; }
+	.co75 { width:14.403cm; }
+	.co76 { width:2.767cm; }
+	.co77 { width:1.933cm; }
+	.co78 { width:2.437cm; }
+	.co79 { width:2.549cm; }
+	.co8 { width:16.386cm; }
+	.co80 { width:2.092cm; }
+	.co81 { width:2.648cm; }
+	.co82 { width:4.38cm; }
+	.co83 { width:14.08cm; }
+	.co84 { width:13.876cm; }
+	.co85 { width:14.2cm; }
+	.co86 { width:2.31cm; }
+	.co87 { width:5.59cm; }
+	.co88 { width:2.344cm; }
+	.co89 { width:2.198cm; }
+	.co9 { width:16.407cm; }
+	.co90 { width:2.477cm; }
+	.co91 { width:4.118cm; }
+	.co92 { width:14.288cm; }
+	.co93 { width:5.736cm; }
+	.co94 { width:2.195cm; }
+	.co95 { width:2.947cm; }
+	.co96 { width:3.71cm; }
+	.co97 { width:14.601cm; }
+	.co98 { width:14.299cm; }
+	.co99 { width:6.682cm; }
+	.ro1 { height:0.976cm; }
+	.ro10 { height:1.149cm; }
+	.ro100 { height:0.724cm; }
+	.ro101 { height:20.945cm; }
+	.ro102 { height:3.834cm; }
+	.ro103 { height:3.539cm; }
+	.ro104 { height:6.481cm; }
+	.ro105 { height:20.429cm; }
+	.ro106 { height:0.671cm; }
+	.ro107 { height:3.711cm; }
+	.ro108 { height:1.878cm; }
+	.ro109 { height:5.695cm; }
+	.ro11 { height:1.099cm; }
+	.ro110 { height:10.133cm; }
+	.ro111 { height:4.7cm; }
+	.ro112 { height:4.568cm; }
+	.ro113 { height:7.859cm; }
+	.ro114 { height:7.408cm; }
+	.ro115 { height:4.619cm; }
+	.ro116 { height:1.379cm; }
+	.ro117 { height:1.102cm; }
+	.ro118 { height:0.898cm; }
+	.ro119 { height:21.173cm; }
+	.ro12 { height:0.712cm; }
+	.ro120 { height:0.727cm; }
+	.ro121 { height:4.745cm; }
+	.ro122 { height:1.019cm; }
+	.ro123 { height:1.676cm; }
+	.ro124 { height:15.7cm; }
+	.ro13 { height:0.806cm; }
+	.ro14 { height:1.455cm; }
+	.ro15 { height:1.853cm; }
+	.ro16 { height:2.452cm; }
+	.ro17 { height:2.058cm; }
+	.ro18 { height:1.057cm; }
+	.ro19 { height:0.826cm; }
+	.ro2 { height:1.185cm; }
+	.ro20 { height:1.824cm; }
+	.ro21 { height:6.773cm; }
+	.ro22 { height:13.297cm; }
+	.ro23 { height:13.117cm; }
+	.ro24 { height:10.381cm; }
+	.ro25 { height:4.282cm; }
+	.ro26 { height:1cm; }
+	.ro27 { height:1.553cm; }
+	.ro28 { height:8.615cm; }
+	.ro29 { height:11.007cm; }
+	.ro3 { height:1.187cm; }
+	.ro30 { height:0.655cm; }
+	.ro31 { height:4.204cm; }
+	.ro32 { height:0.972cm; }
+	.ro33 { height:0.963cm; }
+	.ro34 { height:3.264cm; }
+	.ro35 { height:4.671cm; }
+	.ro36 { height:0.981cm; }
+	.ro37 { height:13.395cm; }
+	.ro38 { height:1.79cm; }
+	.ro39 { height:1.468cm; }
+	.ro4 { height:1.081cm; }
+	.ro40 { height:2.466cm; }
+	.ro41 { height:2.556cm; }
+	.ro42 { height:1.151cm; }
+	.ro43 { height:0.662cm; }
+	.ro44 { height:0.6cm; }
+	.ro45 { height:10.402cm; }
+	.ro46 { height:1.498cm; }
+	.ro47 { height:8.3cm; }
+	.ro48 { height:20.231cm; }
+	.ro49 { height:0.714cm; }
+	.ro5 { height:0.659cm; }
+	.ro50 { height:2.726cm; }
+	.ro51 { height:1.365cm; }
+	.ro52 { height:12.328cm; }
+	.ro53 { height:6.779cm; }
+	.ro54 { height:3.217cm; }
+	.ro55 { height:1.739cm; }
+	.ro56 { height:3.144cm; }
+	.ro57 { height:1.475cm; }
+	.ro58 { height:23.355cm; }
+	.ro59 { height:7.101cm; }
+	.ro6 { height:1.707cm; }
+	.ro60 { height:7.537cm; }
+	.ro61 { height:6.041cm; }
+	.ro62 { height:5.839cm; }
+	.ro63 { height:2.683cm; }
+	.ro64 { height:3.116cm; }
+	.ro65 { height:20.488cm; }
+	.ro66 { height:5.574cm; }
+	.ro67 { height:0.744cm; }
+	.ro68 { height:7.177cm; }
+	.ro69 { height:6.097cm; }
+	.ro7 { height:1.889cm; }
+	.ro70 { height:1.701cm; }
+	.ro71 { height:1.5cm; }
+	.ro72 { height:1.227cm; }
+	.ro73 { height:22.032cm; }
+	.ro74 { height:0.968cm; }
+	.ro75 { height:4.161cm; }
+	.ro76 { height:0.985cm; }
+	.ro77 { height:3.521cm; }
+	.ro78 { height:0.583cm; }
+	.ro79 { height:1.082cm; }
+	.ro8 { height:0.694cm; }
+	.ro80 { height:0.774cm; }
+	.ro81 { height:13.37cm; }
+	.ro82 { height:0.621cm; }
+	.ro83 { height:5.04cm; }
+	.ro84 { height:1.1cm; }
+	.ro85 { height:1.46cm; }
+	.ro86 { height:15.783cm; }
+	.ro87 { height:7.251cm; }
+	.ro88 { height:1.341cm; }
+	.ro89 { height:0.723cm; }
+	.ro9 { height:1.113cm; }
+	.ro90 { height:8.335cm; }
+	.ro91 { height:1.201cm; }
+	.ro92 { height:18.218cm; }
+	.ro93 { height:0.687cm; }
+	.ro94 { height:0.731cm; }
+	.ro95 { height:1.599cm; }
+	.ro96 { height:8.291cm; }
+	.ro97 { height:20.332cm; }
+	.ro98 { height:0.893cm; }
+	.ro99 { height:4.526cm; }
+	.T1 { font-size:10pt; }
+	.T10 { color:#1b1b1b; font-family:Georgia; font-size:12pt; text-decoration:none ! important; font-weight:normal; }
+	.T100 { font-family:Georgia; font-size:10pt; letter-spacing:normal; font-weight:normal; }
+	.T101 { font-family:Georgia; font-size:10pt; letter-spacing:0.008cm; font-weight:normal; }
+	.T102 { font-family:Georgia; font-size:10pt; letter-spacing:normal; }
+	.T103 { font-family:Georgia; font-size:10pt; letter-spacing:-0.004cm; }
+	.T104 { font-family:Georgia; font-size:10pt; letter-spacing:0.006cm; }
+	.T105 { font-family:Georgia; font-size:10pt; letter-spacing:0.008cm; }
+	.T106 { font-family:Georgia; font-size:8pt; }
+	.T107 { font-family:Georgia; font-size:10pt; text-decoration:underline; font-weight:bold; }
+	.T108 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:-0.018cm; font-weight:normal; }
+	.T109 { vertical-align:super; font-size:58%;font-family:Georgia; font-size:18pt; font-weight:bold; }
+	.T11 { color:#e12839; font-family:Georgia; font-size:12pt; text-decoration:none ! important; font-weight:normal; }
+	.T110 { font-family:Georgia; font-size:9pt; }
+	.T111 { font-family:Georgia; font-size:11pt; letter-spacing:-0.01cm; font-weight:normal; }
+	.T112 { font-family:Georgia; font-size:12pt; font-weight:bold; }
+	.T113 { font-family:Georgia; font-size:11pt; font-weight:bold; }
+	.T114 { color:#000000; font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.T115 { color:#000000; font-family:Georgia; font-size:9pt; font-weight:normal; }
+	.T116 { color:#000000; font-family:Georgia; font-size:9pt; font-weight:normal; }
+	.T117 { color:#000000; font-family:Georgia; font-size:9pt; font-weight:normal; }
+	.T118 { color:#002060; font-family:Wingdings; font-size:10pt; font-weight:bold; }
+	.T119 { color:#000000; font-family:Georgia; font-size:9pt; font-weight:normal; }
+	.T12 { color:#000000; font-family:Georgia; font-size:12pt; font-style:normal; text-shadow:none; text-decoration:none ! important; font-weight:normal; }
+	.T120 { color:#000000; font-family:Georgia; font-size:8pt; font-weight:normal; }
+	.T121 { color:#000000; font-family:Georgia; font-size:9pt; font-weight:normal; }
+	.T122 { color:#000000; font-family:Georgia; font-size:10pt; font-weight:normal; }
+	.T123 { color:#000000; font-size:11pt; font-weight:bold; }
+	.T124 { color:#000000; font-size:18pt; }
+	.T125 { font-family:Georgia; font-size:9pt; font-weight:bold; }
+	.T126 { color:#002060; font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.T127 { color:#fc5c00; font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.T128 { color:#000000; font-family:Georgia; font-size:9pt; font-weight:normal; }
+	.T129 { color:#000000; font-family:Georgia; font-size:11pt; font-weight:bold; }
+	.T13 { color:#000000; font-family:Georgia; font-size:12pt; font-style:normal; text-shadow:none; text-decoration:none ! important; font-weight:bold; }
+	.T130 { color:#000000; font-family:Wingdings; font-size:10pt; font-weight:bold; }
+	.T131 { color:#fc5c00; font-family:Georgia; font-size:9pt; font-weight:normal; }
+	.T132 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:-0.01cm; font-style:italic; text-decoration:underline; font-weight:bold; }
+	.T133 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:0.014cm; font-style:italic; text-decoration:none ! important; font-weight:bold; }
+	.T134 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:0.014cm; font-style:italic; text-decoration:underline; font-weight:bold; }
+	.T135 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:0.014cm; font-style:italic; font-weight:bold; }
+	.T136 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:0.014cm; font-style:italic; font-weight:bold; background-color:transparent; }
+	.T137 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:0.014cm; font-style:italic; font-weight:bold; background-color:transparent; }
+	.T138 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:-0.01cm; font-style:italic; font-weight:bold; background-color:transparent; }
+	.T139 { color:#ed1515; font-family:Georgia; font-size:12pt; font-weight:bold; }
+	.T14 { color:#000000; font-family:Georgia; font-size:12pt; font-style:normal; text-shadow:none; text-decoration:none ! important; font-weight:bold; }
+	.T140 { font-family:Georgia; font-size:10pt; letter-spacing:-0.014cm; }
+	.T141 { font-family:Georgia; font-size:10pt; letter-spacing:0.012cm; text-decoration:underline; font-weight:bold; }
+	.T142 { font-family:Georgia; font-size:10pt; letter-spacing:0.012cm; font-weight:bold; }
+	.T143 { font-family:Georgia; font-size:10pt; letter-spacing:0.012cm; font-weight:normal; }
+	.T144 { font-family:Georgia; font-size:10pt; letter-spacing:0.01cm; font-weight:normal; }
+	.T145 { font-family:Georgia; font-size:10pt; letter-spacing:0.006cm; font-weight:normal; }
+	.T146 { font-family:Georgia; font-size:10pt; letter-spacing:-0.036cm; font-weight:normal; }
+	.T147 { font-family:Georgia; font-size:10pt; letter-spacing:-0.002cm; font-weight:normal; }
+	.T148 { font-family:Georgia; font-size:10pt; letter-spacing:0.004cm; font-weight:normal; }
+	.T149 { font-family:Georgia; font-size:14pt; font-weight:bold; }
+	.T15 { color:#000000; font-family:Georgia; font-size:12pt; font-style:normal; text-shadow:none; text-decoration:none ! important; font-weight:normal; }
+	.T150 { font-family:Georgia; font-size:7pt; font-weight:bold; }
+	.T151 { font-family:Georgia; font-size:18pt; letter-spacing:-0.034cm; font-weight:bold; }
+	.T152 { font-family:Georgia; font-size:18pt; }
+	.T153 { font-family:Georgia; font-size:8pt; font-weight:bold; }
+	.T154 { font-family:Georgia; font-size:11pt; letter-spacing:-0.01cm; font-weight:normal; }
+	.T155 { color:#ed1515; font-family:Georgia; font-size:12pt; font-weight:bold; }
+	.T156 { font-family:Georgia; font-size:10pt; text-decoration:underline; }
+	.T157 { color:#000000; font-family:Georgia; font-size:10pt; }
+	.T158 { font-family:Georgia; font-size:10pt; letter-spacing:-0.022cm; text-decoration:underline; font-weight:bold; }
+	.T159 { font-family:Georgia; font-size:10pt; letter-spacing:-0.022cm; font-weight:bold; }
+	.T16 { color:#000000; font-family:Georgia; font-size:9pt; font-weight:bold; }
+	.T160 { font-family:Georgia; font-size:10pt; letter-spacing:-0.022cm; font-weight:normal; }
+	.T161 { font-family:Georgia; font-size:10pt; letter-spacing:-0.006cm; font-weight:normal; }
+	.T162 { font-family:Georgia; font-size:10pt; letter-spacing:0.092cm; font-weight:normal; }
+	.T163 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:0.004cm; font-weight:normal; }
+	.T164 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:-0.022cm; text-decoration:underline; font-weight:bold; }
+	.T165 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:-0.022cm; font-weight:bold; }
+	.T166 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:-0.022cm; font-weight:normal; }
+	.T167 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:0.01cm; font-weight:normal; }
+	.T168 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:0.032cm; font-weight:normal; }
+	.T169 { color:#fc5c00; font-family:Georgia; font-size:10pt; letter-spacing:0.032cm; font-weight:normal; }
+	.T17 { color:#000000; font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.T170 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:0.02cm; font-weight:normal; }
+	.T171 { color:#fc5c00; font-family:Georgia; font-size:10pt; letter-spacing:-0.022cm; font-weight:normal; }
+	.T172 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:-0.004cm; font-weight:normal; }
+	.T173 { font-family:Georgia; font-size:15pt; font-weight:bold; }
+	.T174 { font-family:Georgia; font-size:15pt; font-weight:normal; }
+	.T175 { color:#000000; font-family:Georgia; font-size:11pt; letter-spacing:-0.01cm; font-style:normal; font-weight:normal; }
+	.T176 { color:#000000; font-family:Georgia; font-size:11pt; letter-spacing:-0.01cm; font-style:italic; font-weight:normal; }
+	.T177 { font-family:Georgia; font-size:10pt; letter-spacing:0.026cm; text-decoration:underline; font-weight:bold; }
+	.T178 { font-family:Georgia; font-size:10pt; letter-spacing:0.026cm; font-weight:bold; }
+	.T179 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:0.026cm; font-weight:normal; }
+	.T18 { color:#000000; font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.T180 { color:#fc5c00; font-family:Georgia; font-size:10pt; letter-spacing:0.026cm; font-weight:normal; }
+	.T181 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:0.026cm; text-decoration:underline; font-weight:bold; }
+	.T182 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:0.026cm; font-weight:bold; }
+	.T183 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:-0.012cm; font-weight:normal; }
+	.T184 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:-0.028cm; font-weight:normal; }
+	.T185 { color:#000000; font-family:Georgia; font-size:10pt; text-decoration:underline; font-weight:bold; }
+	.T186 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:0.002cm; font-weight:normal; }
+	.T187 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:normal; font-weight:normal; }
+	.T188 { color:#fc5c00; font-family:Georgia; font-size:10pt; font-weight:normal; }
+	.T189 { font-family:Georgia; font-size:18pt; font-weight:normal; }
+	.T19 { font-family:Georgia; font-size:12pt; letter-spacing:-0.016cm; font-weight:bold; }
+	.T190 { font-family:Georgia; font-size:18pt; }
+	.T191 { color:#000000; font-family:Georgia; font-size:12pt; font-style:italic; }
+	.T192 { font-family:Georgia; font-size:18pt; }
+	.T193 { font-family:Georgia; font-size:11pt; letter-spacing:-0.01cm; font-weight:normal; }
+	.T194 { color:#000000; font-family:Georgia; font-size:9pt; font-weight:normal; }
+	.T195 { color:#232629; font-family:Georgia; font-size:18pt; font-weight:bold; }
+	.T196 { color:#232629; font-family:Georgia; font-size:12pt; font-weight:bold; }
+	.T197 { color:#232629; font-family:Georgia; font-size:12pt; font-weight:normal; }
+	.T198 { color:#1b1b1b; font-family:Georgia; font-size:18pt; font-weight:bold; }
+	.T199 { color:#1b1b1b; font-family:Georgia; font-size:18pt; font-weight:normal; }
+	.T2 { color:#1b1b1b; font-family:Arial; font-size:20pt; letter-spacing:0.002cm; font-weight:bold; background-color:transparent; }
+	.T20 { font-family:Georgia; font-size:12pt; letter-spacing:0.002cm; font-weight:bold; }
+	.T200 { color:#1b1b1b; font-family:Georgia; font-size:12pt; font-weight:normal; }
+	.T201 { color:#000000; font-family:Georgia; font-size:11pt; letter-spacing:-0.01cm; font-style:normal; font-weight:normal; }
+	.T202 { color:#f09e6f; font-family:Georgia; font-size:10pt; letter-spacing:normal; font-weight:normal; }
+	.T203 { color:#fc5c00; font-family:Georgia; font-size:10pt; letter-spacing:normal; font-weight:normal; }
+	.T204 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:normal; text-decoration:underline; font-weight:bold; }
+	.T205 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:normal; font-weight:bold; }
+	.T206 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:0.038cm; font-weight:normal; }
+	.T207 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:0.008cm; font-weight:normal; }
+	.T208 { font-family:Georgia; font-size:10pt; letter-spacing:0.004cm; text-decoration:underline; font-weight:bold; }
+	.T209 { font-family:Georgia; font-size:10pt; letter-spacing:0.004cm; font-weight:bold; }
+	.T21 { font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.T210 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:0.004cm; text-decoration:underline; font-weight:bold; }
+	.T211 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:0.004cm; font-weight:bold; }
+	.T212 { font-family:Georgia; font-size:15pt; font-style:italic; font-weight:bold; }
+	.T213 { font-family:Georgia; font-size:15pt; font-style:italic; font-weight:normal; }
+	.T214 { font-size:18pt; font-weight:bold; }
+	.T215 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:0.012cm; font-weight:normal; }
+	.T216 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:0.014cm; font-weight:normal; }
+	.T217 { font-family:Georgia; font-size:9pt; }
+	.T218 { font-size:9pt; }
+	.T219 { font-family:Georgia; font-size:9pt; }
+	.T22 { font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.T220 { font-family:Georgia; font-size:9pt; }
+	.T221 { color:#000000; font-family:Georgia; font-size:9pt; font-weight:normal; }
+	.T222 { color:#ed1515; font-family:Georgia; font-size:12pt; font-weight:bold; }
+	.T223 { color:#000000; font-family:Georgia; font-size:18pt; font-style:normal; text-decoration:none ! important; font-weight:bold; }
+	.T224 { color:#000000; font-family:Georgia; font-size:14pt; font-weight:normal; }
+	.T225 { color:#000000; font-family:Georgia; font-size:15pt; font-weight:normal; }
+	.T226 { color:#000000; font-family:Arial; font-size:11pt; font-style:normal; text-decoration:none ! important; font-weight:bold; }
+	.T227 { color:#000000; font-family:Arial; font-size:10pt; font-style:normal; text-decoration:none ! important; font-weight:bold; }
+	.T228 { font-family:Georgia; font-size:11pt; letter-spacing:-0.01cm; font-style:normal; font-weight:normal; }
+	.T229 { font-family:Georgia; font-size:10pt; letter-spacing:0.006cm; font-weight:bold; }
+	.T23 { color:#000000; font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.T230 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:0.006cm; font-weight:normal; }
+	.T231 { font-family:Georgia; font-size:9pt; letter-spacing:-0.006cm; font-weight:bold; }
+	.T232 { color:#ff0000; font-family:Georgia; font-size:12pt; font-weight:bold; }
+	.T233 { color:#fcfcfc; font-family:Georgia; font-size:12pt; }
+	.T234 { color:#fcfcfc; font-family:Georgia; font-size:13pt; font-weight:bold; }
+	.T235 { color:#fcfcfc; font-family:Georgia; font-size:13pt; letter-spacing:0.006cm; }
+	.T236 { color:#fcfcfc; font-family:Georgia; font-size:13pt; letter-spacing:0.006cm; font-weight:bold; background-color:transparent; }
+	.T24 { font-family:Georgia; font-size:10pt; letter-spacing:-0.01cm; }
+	.T25 { font-family:Georgia; font-size:10pt; }
+	.T26 { font-family:Georgia; font-size:10pt; }
+	.T27 { font-family:Georgia; font-size:10pt; letter-spacing:-0.008cm; }
+	.T28 { color:#000000; font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.T29 { font-family:Georgia; font-size:10pt; font-weight:normal; }
+	.T3 { color:#1b1b1b; font-family:Arial; font-size:20pt; letter-spacing:0.046cm; font-weight:bold; background-color:transparent; }
+	.T30 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:-0.012cm; font-weight:bold; }
+	.T31 { font-family:Georgia; font-size:10pt; letter-spacing:-0.018cm; font-weight:bold; }
+	.T32 { font-family:Georgia; font-size:10pt; letter-spacing:-0.008cm; font-weight:normal; }
+	.T33 { font-family:Georgia; font-size:10.5pt; }
+	.T34 { font-family:Georgia; font-size:10.5pt; letter-spacing:-0.018cm; }
+	.T35 { font-family:Georgia; font-size:10pt; letter-spacing:0.056cm; font-weight:normal; }
+	.T36 { font-family:Georgia; font-size:10pt; letter-spacing:0.024cm; font-weight:normal; }
+	.T37 { font-family:Georgia; font-size:10pt; letter-spacing:-0.012cm; font-weight:normal; }
+	.T38 { font-family:Georgia; font-size:10pt; letter-spacing:-0.016cm; font-weight:normal; }
+	.T39 { font-family:Georgia; font-size:10pt; letter-spacing:-0.026cm; font-weight:normal; }
+	.T4 { color:#000000; font-family:Arial; font-size:12pt; font-style:normal; text-shadow:none; text-decoration:none ! important; font-weight:bold; }
+	.T40 { font-family:Georgia; font-size:10pt; letter-spacing:-0.004cm; font-weight:normal; }
+	.T41 { color:#000000; font-family:Georgia; font-size:13pt; }
+	.T42 { font-family:Georgia; font-size:20pt; font-weight:bold; }
+	.T43 { font-family:Georgia; }
+	.T44 { color:#1b1b1b; font-family:Georgia; font-size:12pt; text-decoration:none ! important; font-weight:normal; }
+	.T45 { color:#1b1b1b; font-family:Georgia; font-size:12pt; text-decoration:underline; font-weight:bold; }
+	.T46 { color:#1b1b1b; font-family:Georgia; font-size:12pt; text-decoration:none ! important; font-weight:bold; }
+	.T47 { color:#1b1b1b; font-family:Georgia; font-size:22pt; text-decoration:none ! important; font-weight:bold; }
+	.T48 { color:#ff0000; font-family:Georgia; font-size:15pt; font-weight:normal; }
+	.T49 { font-family:Georgia; font-size:12pt; font-weight:normal; }
+	.T5 { color:#000000; font-family:Georgia; font-size:18pt; font-style:normal; text-shadow:none; text-decoration:none ! important; font-weight:normal; }
+	.T50 { color:#1b1b1b; vertical-align:super; font-size:58%;font-family:Georgia; font-size:22pt; text-decoration:none ! important; font-weight:bold; }
+	.T51 { color:#232629; font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.T52 { color:#232629; font-family:Georgia; font-size:10pt; font-weight:normal; }
+	.T53 { color:#232629; font-family:Georgia; font-size:10pt; letter-spacing:-0.006cm; font-weight:normal; }
+	.T54 { color:#232629; font-family:Georgia; font-size:10pt; letter-spacing:0.008cm; font-weight:normal; }
+	.T55 { color:#232629; font-family:Georgia; font-size:10pt; letter-spacing:0.006cm; font-weight:normal; }
+	.T56 { color:#232629; font-family:Georgia; font-size:10pt; letter-spacing:-0.002cm; font-weight:normal; }
+	.T57 { color:#232629; font-family:Georgia; font-size:10pt; letter-spacing:-0.022cm; font-style:normal; text-shadow:none; text-decoration:none ! important; font-weight:normal; }
+	.T58 { color:#232629; font-family:Georgia; font-size:10pt; letter-spacing:-0.006cm; font-style:normal; text-shadow:none; text-decoration:none ! important; font-weight:normal; }
+	.T59 { color:#232629; font-family:Georgia; font-size:10pt; letter-spacing:-0.008cm; font-weight:normal; }
+	.T6 { color:#000000; font-family:Georgia; font-size:18pt; font-style:normal; text-shadow:none; text-decoration:none ! important; font-weight:bold; }
+	.T60 { color:#232629; font-family:Georgia; font-size:10pt; letter-spacing:-0.006cm; font-weight:bold; }
+	.T61 { color:#232629; font-family:Georgia; font-size:10pt; letter-spacing:-0.016cm; font-weight:normal; }
+	.T62 { color:#000000; font-family:Georgia; font-size:9pt; letter-spacing:-0.016cm; font-weight:normal; }
+	.T63 { font-family:Georgia; font-size:26pt; font-weight:bold; }
+	.T64 { font-family:Georgia; font-size:12pt; font-style:normal; font-weight:bold; }
+	.T65 { font-family:Georgia; font-size:12pt; font-style:italic; font-weight:normal; }
+	.T66 { font-family:Georgia; font-size:18pt; font-weight:bold; }
+	.T67 { font-size:18pt; }
+	.T68 { font-size:18pt; }
+	.T69 { color:#000000; font-family:Georgia; font-size:11pt; letter-spacing:normal; font-weight:normal; }
+	.T7 { color:#000000; font-family:Georgia; font-size:12pt; font-style:normal; text-shadow:none; text-decoration:none ! important; font-weight:normal; }
+	.T70 { font-family:Georgia; font-size:11pt; letter-spacing:normal; font-weight:normal; }
+	.T71 { color:#000000; font-family:Georgia; font-size:11pt; font-weight:normal; }
+	.T72 { color:#000000; font-family:Georgia; font-size:10pt; font-weight:bold; }
+	.T73 { color:#000000; font-family:Georgia; font-size:9pt; font-weight:bold; }
+	.T74 { font-family:Georgia; font-size:9pt; text-decoration:underline; }
+	.T75 { color:#000000; font-family:Georgia; font-size:9pt; }
+	.T76 { color:#000000; font-family:Georgia; font-size:9pt; font-weight:bold; }
+	.T77 { color:#ed1515; font-family:Georgia; font-size:12pt; font-weight:bold; }
+	.T78 { font-family:Georgia; font-size:10pt; letter-spacing:-0.014cm; font-weight:bold; }
+	.T79 { font-family:Georgia; font-size:10pt; letter-spacing:-0.014cm; font-weight:normal; }
+	.T8 { color:#000000; font-family:Georgia; font-size:12pt; text-decoration:none ! important; font-weight:normal; }
+	.T80 { color:#000000; font-family:Georgia; font-size:10pt; letter-spacing:-0.014cm; font-weight:normal; }
+	.T81 { font-size:10pt; letter-spacing:-0.014cm; }
+	.T82 { font-family:Georgia; font-size:11pt; letter-spacing:-0.004cm; }
+	.T83 { font-family:Georgia; font-size:10pt; font-style:normal; text-decoration:underline; font-weight:bold; }
+	.T84 { font-family:Georgia; font-size:10pt; font-style:normal; font-weight:bold; }
+	.T85 { font-family:Georgia; font-size:10pt; font-style:normal; font-weight:normal; }
+	.T86 { font-family:Georgia; font-size:10pt; font-style:normal; font-weight:normal; }
+	.T87 { font-family:Georgia; font-size:10pt; letter-spacing:0.022cm; font-style:normal; font-weight:normal; }
+	.T88 { font-family:Georgia; font-size:12pt; font-style:italic; }
+	.T89 { font-family:Georgia; font-size:12pt; }
+	.T9 { color:#000000; font-family:Georgia; font-size:12pt; text-decoration:none ! important; font-weight:bold; }
+	.T90 { font-family:Georgia; font-size:11pt; font-weight:normal; }
+	.T91 { color:#e12839; font-weight:bold; }
+	.T92 { color:#e12839; font-size:14pt; font-weight:bold; }
+	.T93 { color:#e36b51; font-size:12pt; font-weight:bold; }
+	.T94 { color:#000000; font-family:Georgia; font-size:10pt; font-weight:normal; }
+	.T95 { font-size:16pt; font-weight:bold; }
+..T96 { font-size:18pt; }input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+	.T97 { font-family:Georgia; font-size:10pt; letter-spacing:0.008cm; text-decoration:underline; font-weight:bold; }
+	.T98 { font-family:Georgia; font-size:10pt; letter-spacing:0.008cm; text-decoration:none ! important; font-weight:bold; }
+	.T99 { font-family:Georgia; font-size:10pt; letter-spacing:0.008cm; font-weight:bold; }
+	/* ODF styles with no properties representable as CSS */
+	
+}

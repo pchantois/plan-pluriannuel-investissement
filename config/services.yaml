@@ -4,6 +4,10 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
+    locale: 'fr'
+    mailer_user: 'pchantois@ville-pantin.fr'
+    ga_theme: 'autres'
+    app.path.operation_images: /images/illustration/operation
 
 services:
     # default configuration for services in *this* file

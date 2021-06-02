@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=ParamsRepository::class)
+ * @ORM\Table(schema="symfony_ppi")
  */
 class Params
 {
