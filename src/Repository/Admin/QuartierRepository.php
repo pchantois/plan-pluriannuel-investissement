@@ -4,7 +4,7 @@ namespace App\Repository\Admin;
 
 use App\Entity\Admin\Quartier;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Symfony\Bridge\Doctrine\ManagerRegistry;
+use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * @method Quartier|null find($id, $lockMode = null, $lockVersion = null)

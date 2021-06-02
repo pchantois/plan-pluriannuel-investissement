@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\Admin\NatureOpeRepository")
+ * @ORM\Table(schema="symfony_ppi")
  */
 class NatureOpe
 {

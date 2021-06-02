@@ -4,7 +4,7 @@ namespace App\Repository\Admin;
 
 use App\Entity\Admin\CodeMaire;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Symfony\Bridge\Doctrine\ManagerRegistry;
+use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * @method CodeMaire|null find($id, $lockMode = null, $lockVersion = null)

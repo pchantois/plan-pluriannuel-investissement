@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'db61a5ed8655744227721f4e69437f82b3f13fa6',
+    'reference' => '07de7c8a616bf9a64d167acea9da411887dbbf25',
     'name' => '__root__',
   ),
   'versions' => 
@@ -41,7 +41,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'db61a5ed8655744227721f4e69437f82b3f13fa6',
+      'reference' => '07de7c8a616bf9a64d167acea9da411887dbbf25',
     ),
     'composer/package-versions-deprecated' => 
     array (
@@ -222,6 +222,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '587bfddfd9847c1d0417c4cf07d1dbf19aa6d136',
+    ),
+    'jms/metadata' => 
+    array (
+      'pretty_version' => '2.5.0',
+      'version' => '2.5.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'b5c52549807b2d855b3d7e36ec164c00eb547338',
     ),
     'laminas/laminas-code' => 
     array (
@@ -438,12 +447,12 @@ private static $installed = array (
     ),
     'symfony/asset' => 
     array (
-      'pretty_version' => 'v5.2.7',
-      'version' => '5.2.7.0',
+      'pretty_version' => 'v5.2.10',
+      'version' => '5.2.10.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'e6676acfabf011dca2beaa5f9b8d519c8aea2870',
+      'reference' => 'c65584ca108c9e51c80cc49ebdcb47dfd995431c',
     ),
     'symfony/browser-kit' => 
     array (
@@ -1121,6 +1130,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '21578f00e83d4a82ecfa3d50752b609f13de6790',
+    ),
+    'vich/uploader-bundle' => 
+    array (
+      'pretty_version' => '1.17.1',
+      'version' => '1.17.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '94ba188f2603fad9bf9d2a88c61444f5e52a11df',
     ),
     'webmozart/assert' => 
     array (

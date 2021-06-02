@@ -4,7 +4,7 @@ namespace App\Repository\Admin;
 
 use App\Entity\Admin\OperationData;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Symfony\Bridge\Doctrine\ManagerRegistry;
+use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * @method OperationData|null find($id, $lockMode = null, $lockVersion = null)

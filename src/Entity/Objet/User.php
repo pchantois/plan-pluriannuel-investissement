@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\Objet\UserRepository")
- * @ORM\Table(name="fos_user")
+ * @ORM\Table(name="fos_user", schema="symfony_ppi")
  */
 class User {
 	/**
