@@ -32,15 +32,6 @@
             <td>Dépenses</td>
             {% for financement in financements %}
                 {% if financement.type %}
-                    {% for annee in periode.. periode_end if annee < financement.annee %}
-                        {% if periode <= periode_end %}
-                            {% if version != "seminaire" %}
-                                <td>0</td>
-                                {% set chargeNet = chargeNet|merge([0]) %}
-                            {% endif %}
-                        {% endif %}
-                        {% set periode = periode + 1 %}
-                    {% endfor %}
                     {% if financement.annee <= periode_ref %}
                         {% set montantAvant = montantAvant + financement.montant %}
                         {% set montantTotal = montantTotal + financement.montant %}
@@ -90,16 +81,6 @@
             {% set etat = 'init' %}
             {% for financement in financements %}
                 {% if not financement.type %}
-                    {% for annee in periode.. periode_end if financement.annee > annee %}
-                        {% if periode <= periode_end %}
-                            {% if version != "seminaire" %}
-                                <td>0</td>
-                                {% set chargeNet2 = chargeNet2|merge([chargeNet|first]) %}
-                                {% set chargeNet = chargeNet[1:] %}
-                            {% endif %}
-                        {% endif %}
-                        {% set periode = periode + 1 %}
-                    {% endfor %}
                     {% if financement.annee <= periode_ref %}
                         {% set montantAvant = montantAvant + financement.montant %}
                         {% set montantTotal = montantTotal + financement.montant %}
