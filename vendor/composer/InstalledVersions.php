@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '07de7c8a616bf9a64d167acea9da411887dbbf25',
+    'reference' => 'f5a938c3586f15d03b0e16a03615a02a0d010391',
     'name' => '__root__',
   ),
   'versions' => 
@@ -41,7 +41,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '07de7c8a616bf9a64d167acea9da411887dbbf25',
+      'reference' => 'f5a938c3586f15d03b0e16a03615a02a0d010391',
     ),
     'composer/package-versions-deprecated' => 
     array (
@@ -921,12 +921,12 @@ private static $installed = array (
     ),
     'symfony/security-bundle' => 
     array (
-      'pretty_version' => 'v5.2.9',
-      'version' => '5.2.9.0',
+      'pretty_version' => 'v5.2.10',
+      'version' => '5.2.10.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'c3502279a8e28e6586c1f0cce674f0d360236997',
+      'reference' => '642a43f0c93752df9bab473b14192053c137583b',
     ),
     'symfony/security-core' => 
     array (

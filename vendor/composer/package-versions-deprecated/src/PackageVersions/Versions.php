@@ -111,7 +111,7 @@ final class Versions
   'symfony/property-info' => 'v5.2.8@cc8121baf91039648d5f8feb894dc4a9d4935cc0',
   'symfony/proxy-manager-bridge' => 'v5.2.9@1c89e22a22e01f040849a28f7fe63c6a16e6c99f',
   'symfony/routing' => 'v5.2.9@4a7b2bf5e1221be1902b6853743a9bb317f6925e',
-  'symfony/security-bundle' => 'v5.2.9@c3502279a8e28e6586c1f0cce674f0d360236997',
+  'symfony/security-bundle' => 'v5.2.10@642a43f0c93752df9bab473b14192053c137583b',
   'symfony/security-core' => 'v5.2.9@03d9f94e733afd4f3e73081fa7809f8a02f77a11',
   'symfony/security-csrf' => 'v5.2.7@0ed3353e3c053711a1d86a74395f25736fc333de',
   'symfony/security-guard' => 'v5.2.8@8137325674edfdecf7367e40804d8ee9525b87e0',
@@ -141,10 +141,10 @@ final class Versions
   'symfony/maker-bundle' => 'v1.31.1@4f57a44cef0b4555043160b8bf223fcde8a7a59a',
   'symfony/phpunit-bridge' => 'v5.2.9@ea24e42c1ee04792f5d814da6f0814b20ece2907',
   'symfony/web-profiler-bundle' => 'v5.2.8@68aea5b0ca1328c2a1ae3df04cce50302a5106f9',
-  'symfony/polyfill-ctype' => '*@07de7c8a616bf9a64d167acea9da411887dbbf25',
-  'symfony/polyfill-iconv' => '*@07de7c8a616bf9a64d167acea9da411887dbbf25',
-  'symfony/polyfill-php72' => '*@07de7c8a616bf9a64d167acea9da411887dbbf25',
-  '__root__' => 'dev-master@07de7c8a616bf9a64d167acea9da411887dbbf25',
+  'symfony/polyfill-ctype' => '*@f5a938c3586f15d03b0e16a03615a02a0d010391',
+  'symfony/polyfill-iconv' => '*@f5a938c3586f15d03b0e16a03615a02a0d010391',
+  'symfony/polyfill-php72' => '*@f5a938c3586f15d03b0e16a03615a02a0d010391',
+  '__root__' => 'dev-master@f5a938c3586f15d03b0e16a03615a02a0d010391',
 );
 
     private function __construct()
