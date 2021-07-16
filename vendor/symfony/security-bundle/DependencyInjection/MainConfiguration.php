@@ -356,8 +356,8 @@ class MainConfiguration implements ConfigurationInterface
             ->children()
                 ->arrayNode('encoders')
                     ->example([
-                        'App\Entity\Objet\User1' => 'auto',
-                        'App\Entity\Objet\User2' => [
+                        'App\Entity\User1' => 'auto',
+                        'App\Entity\User2' => [
                             'algorithm' => 'auto',
                             'time_cost' => 8,
                             'cost' => 13,

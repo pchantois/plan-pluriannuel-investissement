@@ -442,7 +442,7 @@ class Table
                 $formattedTitle = sprintf($titleFormat, Helper::substr($title, 0, $limit - $formatLength - 3).'...');
             }
 
-            $titleStart = ($markupLength - $titleLength) / 2;
+            $titleStart = intdiv($markupLength - $titleLength, 2);
             if (false === mb_detect_encoding($markup, null, true)) {
                 $markup = substr_replace($markup, $formattedTitle, $titleStart, $titleLength);
             } else {
@@ -520,7 +520,7 @@ class Table
             if ($isNotStyledByTag) {
                 $cellFormat = $cell->getStyle()->getCellFormat();
                 if (!\is_string($cellFormat)) {
-                    $tag = http_build_query($cell->getStyle()->getTagOptions(), null, ';');
+                    $tag = http_build_query($cell->getStyle()->getTagOptions(), '', ';');
                     $cellFormat = '<'.$tag.'>%s</>';
                 }
 

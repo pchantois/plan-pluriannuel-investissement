@@ -1,5 +1,5 @@
 {# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
-{% use 'bootstrap_4_layout.html.twig' %}
+{% use '@EasyAdmin/symfony-form-themes/bootstrap_5_layout.html.twig' %}
 
 {% block form_start %}
     {% if form.vars.errors|length > 0 and 'ea_crud' in form.vars.block_prefixes|default([]) %}
@@ -24,6 +24,11 @@
     {{- parent() -}}
 {%- endblock form_widget_simple %}
 
+{% block datetime_widget %}
+    {% set attr = attr|merge({class: (attr.class|default('') ~ ' form-inline')|trim}) %}
+    {{ parent() }}
+{% endblock datetime_widget %}
+
 {% block date_widget -%}
     <div class="datetime-widget datetime-widget-date">
         {{- parent() -}}
@@ -41,16 +46,7 @@
         {%- set type = type|default('file') -%}
         {{- block('form_widget_simple') -}}
     {% else %}
-        {{- parent() -}}
-
-        <script>
-            document.querySelector('#{{ id }}').addEventListener('change', (event) => {
-                const fileName = event.currentTarget.value.replace('C:\\fakepath\\', '');
-                const customInputFileLabel = document.querySelector('#{{ id }} ~ .custom-file-label');
-                customInputFileLabel.classList.add('selected');
-                customInputFileLabel.innerHTML = fileName;
-            });
-        </script>
+        {{- block('form_widget_simple') -}}
     {% endif %}
 {%- endblock %}
 
@@ -98,8 +94,10 @@
                 </div>
             {% endif %}
 
-            {% if ea.field.help|default(form.vars.help) != '' %}
-                <small class="form-help">{{ ea.field.help|default(form.vars.help)|raw }}</small>
+            {% if ea.field.help ?? false %}
+                <small class="form-help">{{ ea.field.help|raw }}</small>
+            {% elseif form.vars.help ?? false %}
+                <small class="form-help">{{ form.vars.help|trans(form.vars.help_translation_parameters, form.vars.translation_domain)|raw }}</small>
             {% endif %}
 
             {{- form_errors(form) -}}
@@ -277,7 +275,7 @@
             {% else %}
                 {% set _lightbox_id = 'ea-lightbox-' ~ id %}
 
-                <a href="#" class="ea-lightbox-thumbnail" data-featherlight="#{{ _lightbox_id }}" data-featherlight-close-on-click="anywhere">
+                <a href="#" class="ea-lightbox-thumbnail" data-ea-lightbox-content-selector="#{{ _lightbox_id }}">
                     {% if formTypeOptions.imagine_pattern is defined and formTypeOptions.imagine_pattern is not empty %}
                         <img src="{{ (asset_helper is same as(true) ? asset(download_uri) : download_uri)|ea_apply_filter_if_exists('imagine_filter', formTypeOptions.imagine_pattern) }}">
                     {% else %}
@@ -329,7 +327,7 @@
                 <ul class="nav nav-tabs">
                     {% for tab_name, tab_config in ea_form_tabs %}
                         <li class="nav-item">
-                            <a class="nav-link {% if tab_config.active %}active{% endif %}" href="#{{ tab_config['id'] }}" id="{{ tab_config['id'] }}-tab" data-toggle="tab">
+                            <a class="nav-link {% if tab_config.active %}active{% endif %}" href="#{{ tab_config['id'] }}" id="{{ tab_config['id'] }}-tab" data-bs-toggle="tab">
                                 {%- if tab_config.icon|default(false) -%}
                                     <i class="fa fa-fw fa-{{ tab_config.icon }}"></i>
                                 {%- endif -%}
@@ -375,7 +373,7 @@
                 {% if panel_has_header %}
                     <div class="content-panel-header {{ collapsible ? 'collapsible' }} {{ panel_config.help|default(false) is not empty ? 'with-help' }}">
                         {% if collapsible %}
-                            <a href="#content-{{ panel_name }}" data-toggle="collapse" class="content-panel-collapse {{ collapsed ? 'collapsed' }}" aria-expanded="{{ collapsed ? 'false' : 'true' }}" aria-controls="content-{{ panel_name }}">
+                            <a href="#content-{{ panel_name }}" data-bs-toggle="collapse" class="content-panel-collapse {{ collapsed ? 'collapsed' }}" aria-expanded="{{ collapsed ? 'false' : 'true' }}" aria-controls="content-{{ panel_name }}">
                                 <i class="fas fw fa-chevron-right collapse-icon"></i>
                         {% endif %}
 
@@ -485,7 +483,7 @@
         <div class="filter-field {% if not loop.last %}border-bottom{% endif %} py-1 px-3 {% if loop.last %}pb-2{% endif %}" data-filter-property="{{ field.vars.name }}">
             <div class="filter-heading" id="filter-heading-{{ loop.index }}">
                 <input type="checkbox" class="filter-checkbox" {% if field.vars.name in applied_filters %}checked{% endif %}>
-                <a data-toggle="collapse" href="#filter-content-{{ loop.index }}" aria-expanded="{{ field.vars.name in applied_filters ? 'true' : 'false' }}" aria-controls="filter-content-{{ loop.index }}">
+                <a data-bs-toggle="collapse" href="#filter-content-{{ loop.index }}" aria-expanded="{{ field.vars.name in applied_filters ? 'true' : 'false' }}" aria-controls="filter-content-{{ loop.index }}">
                     {{ field.vars.label|default(field.vars.name|humanize)|trans(domain = ea.i18n.translationDomain) }}
                 </a>
             </div>
@@ -522,8 +520,6 @@
             }
         });
     </script>
-
-    {{ include('@EasyAdmin/crud/includes/_select2_widget.html.twig') }}
 {% endblock ea_filters_widget %}
 
 {% block ea_numeric_filter_widget %}
@@ -561,22 +557,27 @@
                     {% set title = (currentFiles|first).mTime|date %}
                 {% endif %}
             {% endif %}
-            {{ form_widget(form.file, { attr: form.file.vars.attr|merge({ placeholder: placeholder, title: title, 'data-files-label': filesLabel }) }) }}
-            <div class="input-group-append">
-                <span class="input-group-text" {% if currentFiles is empty %}style="display: none"{% endif %}>
-                    {%- if currentFiles -%}
-                        {% if multiple %}
-                            {{ (currentFiles|reduce((carry, file) => carry + file.size))|ea_filesize }}
-                        {% else %}
-                            {{ (currentFiles|first).size|ea_filesize }}
-                        {% endif %}
-                    {%- endif -%}
-                </span>
+
+            <div class="custom-file">
+                {{ form_widget(form.file, { attr: form.file.vars.attr|merge({ placeholder: placeholder, title: title, 'data-files-label': filesLabel, style: 'display: none' }) }) }}
+                {{ form_label(form.file, placeholder, { label_attr: { class: 'custom-file-label' }}) }}
+            </div>
+
+            <div class="input-group-text" {% if currentFiles is empty %}style="display: none"{% endif %}>
+                {%- if currentFiles -%}
+                    {% if multiple %}
+                        {{ (currentFiles|reduce((carry, file) => carry + file.size))|ea_filesize }}
+                    {% else %}
+                        {{ (currentFiles|first).size|ea_filesize }}
+                    {% endif %}
+                {%- endif -%}
+
                 {% if allow_delete %}
                     <label class="btn ea-fileupload-delete-btn" {% if currentFiles is empty %}style="display: none"{% endif %} for="{{ form.delete.vars.id }}">
                         <i class="fa fa-trash-o"></i>
                     </label>
                 {% endif %}
+
                 <label class="btn" for="{{ form.file.vars.id }}">
                     <i class="fa fa-folder-open-o"></i>
                 </label>

@@ -1,14 +1,14 @@
 security:
-    # encoders:
-    #     App\Entity\Objet\User:
-    #         algorithm: auto
-
-    password_hashers:
-        # use your user class name here
+    encoders:
         App\Entity\Objet\User:
-            # Use native password hasher, which auto-selects the best
-            # possible hashing algorithm (starting from Symfony 5.3 this is "bcrypt")
             algorithm: auto
+
+    # password_hashers:
+    #     # use your user class name here
+    #     App\Entity\Objet\User:
+    #         # Use native password hasher, which auto-selects the best
+    #         # possible hashing algorithm (starting from Symfony 5.3 this is "bcrypt")
+    #         algorithm: auto
 
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     enable_authenticator_manager: true

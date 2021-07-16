@@ -75,7 +75,7 @@ final class AdminUrlGenerator
 
     public function setRoute(string $routeName, array $routeParameters = []): self
     {
-        $this->unsetAllExcept(EA::MENU_INDEX, EA::SUBMENU_INDEX);
+        $this->unsetAllExcept(EA::MENU_INDEX, EA::SUBMENU_INDEX, EA::DASHBOARD_CONTROLLER_FQCN);
         $this->setRouteParameter(EA::ROUTE_NAME, $routeName);
         $this->setRouteParameter(EA::ROUTE_PARAMS, $routeParameters);
 
@@ -245,7 +245,9 @@ final class AdminUrlGenerator
         });
         ksort($routeParameters, \SORT_STRING);
 
-        $url = $this->urlGenerator->generate($this->dashboardRoute, $routeParameters, UrlGeneratorInterface::ABSOLUTE_URL);
+        $context = $this->adminContextProvider->getContext();
+        $urlType = null !== $context && false === $context->getAbsoluteUrls() ? UrlGeneratorInterface::RELATIVE_PATH : UrlGeneratorInterface::ABSOLUTE_URL;
+        $url = $this->urlGenerator->generate($this->dashboardRoute, $routeParameters, $urlType);
 
         if ($this->signUrls()) {
             $url = $this->urlSigner->sign($url);
@@ -293,7 +295,7 @@ final class AdminUrlGenerator
             $this->dashboardRoute = $adminContext->getDashboardRouteName();
             $currentRouteParameters = $routeParametersForReferrer = $adminContext->getRequest()->query->all();
             unset($routeParametersForReferrer[EA::REFERRER]);
-            $this->currentPageReferrer = sprintf('%s?%s', $adminContext->getRequest()->getPathInfo(), http_build_query($routeParametersForReferrer));
+            $this->currentPageReferrer = sprintf('%s%s?%s', $adminContext->getRequest()->getBaseUrl(), $adminContext->getRequest()->getPathInfo(), http_build_query($routeParametersForReferrer));
         }
 
         $this->includeReferrer = null;

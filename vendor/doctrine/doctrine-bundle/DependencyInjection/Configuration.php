@@ -11,10 +11,15 @@ use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Symfony\Component\DependencyInjection\Exception\LogicException;
 
+use function array_intersect_key;
 use function array_key_exists;
+use function array_keys;
+use function array_pop;
 use function assert;
 use function class_exists;
 use function constant;
+use function count;
+use function implode;
 use function in_array;
 use function is_array;
 use function is_bool;
@@ -23,10 +28,12 @@ use function is_string;
 use function key;
 use function method_exists;
 use function reset;
+use function sprintf;
 use function strlen;
 use function strpos;
 use function strtoupper;
 use function substr;
+use function trigger_deprecation;
 
 /**
  * This class contains the configuration information for the bundle
@@ -39,9 +46,7 @@ class Configuration implements ConfigurationInterface
     /** @var bool */
     private $debug;
 
-    /**
-     * @param bool $debug Whether to use the debug mode
-     */
+    /** @param bool $debug Whether to use the debug mode */
     public function __construct(bool $debug)
     {
         $this->debug = $debug;
@@ -208,9 +213,6 @@ class Configuration implements ConfigurationInterface
                 ->arrayNode('shards')
                     ->prototype('array');
 
-        // TODO: Remove when https://github.com/psalm/psalm-plugin-symfony/pull/168 is released
-        assert($shardNode instanceof ArrayNodeDefinition);
-
         $shardNode
             ->children()
                 ->integerNode('id')
@@ -231,6 +233,29 @@ class Configuration implements ConfigurationInterface
     private function configureDbalDriverNode(ArrayNodeDefinition $node): void
     {
         $node
+            ->validate()
+            ->always(static function (array $values) {
+                if (! isset($values['url'])) {
+                    return $values;
+                }
+
+                $urlConflictingOptions = ['host' => true, 'port' => true, 'user' => true, 'password' => true, 'path' => true, 'dbname' => true, 'unix_socket' => true, 'memory' => true];
+                $urlConflictingValues  = array_keys(array_intersect_key($values, $urlConflictingOptions));
+
+                if ($urlConflictingValues) {
+                    $tail = count($urlConflictingValues) > 1 ? sprintf('or "%s" options', array_pop($urlConflictingValues)) : 'option';
+                    trigger_deprecation(
+                        'doctrine/doctrine-bundle',
+                        '2.4',
+                        'Setting the "doctrine.dbal.%s" %s while the "url" one is defined is deprecated',
+                        implode('", "', $urlConflictingValues),
+                        $tail
+                    );
+                }
+
+                return $values;
+            })
+            ->end()
             ->children()
                 ->scalarNode('url')->info('A URL with connection information; any parameter value parsed from this string will override explicitly set parameters')->end()
                 ->scalarNode('dbname')->end()
@@ -238,7 +263,8 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('port')->info('Defaults to null at runtime.')->end()
                 ->scalarNode('user')->info('Defaults to "root" at runtime.')->end()
                 ->scalarNode('password')->info('Defaults to null at runtime.')->end()
-                ->booleanNode('override_url')->defaultValue(false)->info('Allows overriding parts of the "url" parameter with dbname, host, port, user, and/or password parameters.')->end()
+                ->booleanNode('override_url')->setDeprecated(...$this->getDeprecationMsg('The "doctrine.dbal.override_url" configuration key is deprecated.', '2.4'))->end()
+                ->scalarNode('dbname_suffix')->end()
                 ->scalarNode('application_name')->end()
                 ->scalarNode('charset')->end()
                 ->scalarNode('path')->end()
@@ -693,7 +719,6 @@ class Configuration implements ConfigurationInterface
         $node        = $treeBuilder->getRootNode();
 
         $node
-            ->addDefaultsIfNotSet()
             ->beforeNormalization()
                 ->ifString()
                 ->then(static function ($v): array {
@@ -708,9 +733,11 @@ class Configuration implements ConfigurationInterface
 
         if ($name === 'metadata_cache_driver') {
             $node->setDeprecated(...$this->getDeprecationMsg(
-                'The "metadata_cache_driver" configuration key is deprecated. PHP Array cache is now automatically registered when %kernel.debug% is false.',
+                'The "metadata_cache_driver" configuration key is deprecated. Remove the configuration to have the cache created automatically.',
                 '2.3'
             ));
+        } else {
+            $node->addDefaultsIfNotSet();
         }
 
         return $node;
