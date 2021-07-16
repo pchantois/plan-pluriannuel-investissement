@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Admin\Operation;
 use App\Form\Admin\OperationType;
+use App\Entity\Admin\OperationData;
 use App\Repository\Admin\OperationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -248,6 +249,10 @@ class OperationController extends AbstractController
      */
     public function new(Request $request): Response
     {
+        $start = 2021;
+        $end = 2028;
+        $configs = $this->configs();
+        $configs['site']['libelle']['currentTitle'] = "Ajout d'une opération";
         $operation = new Operation();
         $operation->setUser($this->getUser());
         $form = $this->createForm(OperationType::class, $operation);
@@ -258,12 +263,27 @@ class OperationController extends AbstractController
             $entityManager->persist($operation);
             $entityManager->flush();
 
-            return $this->redirectToRoute('operation_index');
+            return $this->redirectToRoute('operation_index_par_dept_dir');
+        } else {
+            // Initialisation des opérations
+            // foreach (range($start, $end) as $date) {
+            //     $operationData = new OperationData();
+            //     $operationData2 = new OperationData();
+            //     $operationData->setAnnee($date);
+            //     $operationData->setMontant(0);
+            //     $operationData->setType(true);
+            //     $operationData2->setAnnee($date);
+            //     $operationData2->setMontant(0);
+            //     $operationData2->setType(false);
+            //     $operation->addOperationDatum($operationData);
+            //     $operation->addOperationDatum($operationData2);
+            // }
         }
 
         return $this->render('admin/operation/new.html.twig', [
             'operation' => $operation,
             'form' => $form->createView(),
+            'configs'   => $configs,
         ]);
     }
 
@@ -299,6 +319,7 @@ class OperationController extends AbstractController
         return $this->render('admin/operation/edit.html.twig', [
             'operation' => $operation,
             'form' => $form->createView(),
+            'configs'   => $this->configs(),
         ]);
     }
 

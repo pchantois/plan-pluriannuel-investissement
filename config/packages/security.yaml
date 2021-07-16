@@ -1,15 +1,31 @@
 security:
+    encoders:
+        App\Entity\Objet\User:
+            algorithm: auto
+
+    # password_hashers:
+    #     # use your user class name here
+    #     App\Entity\Objet\User:
+    #         # Use native password hasher, which auto-selects the best
+    #         # possible hashing algorithm (starting from Symfony 5.3 this is "bcrypt")
+    #         algorithm: auto
+
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    enable_authenticator_manager: true
     providers:
-        users_in_memory: { memory: null }
+        # used to reload user from session & other features (e.g. switch_user)
+        app_user_provider:
+            entity:
+                class: App\Entity\Objet\User
+                property: email
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            anonymous: true
+            anonymous: false
             lazy: true
-            provider: users_in_memory
+            provider: app_user_provider
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication

@@ -5,6 +5,12 @@ input[disabled] {
     cursor: not-allowed;
 }
 
+.form-inline {
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+}
+
 // Base form groups
 .form-group {
     display: flex;
@@ -108,7 +114,7 @@ label.form-check-label {
 
 .form-widget input.form-control,
 .form-widget textarea.form-control,
-.form-widget select.form-control {
+.form-widget .form-select {
     border: 0;
     padding: 3px 7px 4px;
     box-shadow: 0 0 0 1px rgba(43, 45, 80, .16), 0 0 0 1px rgba(6, 122, 184, 0), 0 0 0 2px rgba(6, 122, 184, 0), 0 1px 1px rgba(0, 0, 0, .08);
@@ -119,10 +125,18 @@ label.form-check-label {
     transition: box-shadow .08s ease-in, color .08s ease-in;
 }
 
+.form-widget [type="number"].form-control,
+.form-widget [type="time"].form-control,
+.form-widget [type="date"].form-control,
+.form-widget [type="datetime-local"].form-control
+{
+    max-width: unset;
+    width: auto;
+}
+
 .full-width .form-widget input.form-control,
 .full-width .form-widget textarea.form-control,
-.full-width .form-widget select.form-control,
-.full-width .form-widget .select2-container--bootstrap .select2-selection {
+.full-width .form-widget .form-select {
     max-width: none;
 }
 
@@ -140,7 +154,7 @@ label.form-check-label {
 
 .form-widget input.form-control:focus,
 .form-widget textarea.form-control:focus,
-.form-widget select.form-control:focus,
+.form-widget .form-select:focus,
 .form-widget .custom-file-input:focus ~ .custom-file-label {
     box-shadow: 0 0 0 1px rgba(43, 45, 80, 0), 0 0 0 1px rgba(6, 122, 184, .2), 0 0 0 2px rgba(6, 122, 184, .25), 0 1px 1px rgba(0, 0, 0, .08);
     outline: 0;
@@ -149,16 +163,20 @@ label.form-check-label {
 .form-widget textarea.form-control {
     height: auto;
     line-height: 1.6;
+    max-width: unset;
     white-space: pre-wrap;
 }
-
-.form-widget select.form-control {
-    box-shadow: 0 0 0 1px rgba(43, 45, 80, .1), 0 2px 5px 0 rgba(43, 45, 80, .08), 0 1px 1.5px 0 rgba(0, 0, 0, .07), 0 1px 2px 0 rgba(0, 0, 0, .08);
-    padding-left: 4px;
-    padding-right: 4px;
+.form-widget-compound textarea.form-control {
+    max-width: 350px;
 }
 
-.form-widget select[multiple].form-control {
+.form-widget .form-select {
+    background-position: right 5px center;
+    box-shadow: 0 0 0 1px rgba(43, 45, 80, .1), 0 2px 5px 0 rgba(43, 45, 80, .08), 0 1px 1.5px 0 rgba(0, 0, 0, .07), 0 1px 2px 0 rgba(0, 0, 0, .08);
+    padding: 3px 30px 4px 7px;
+    width: auto;
+}
+.ts-dropdown.form-select {
     height: auto;
 }
 
@@ -214,10 +232,6 @@ label.form-check-label {
 .field-time .form-widget,
 .field-datetime .form-widget {
     margin: 0;
-}
-
-.field-datetime .form-inline {
-    display: flex;
 }
 
 .datetime-widget + .datetime-widget {
@@ -441,7 +455,7 @@ fieldset .legend-help {
 
 .has-error .form-widget input.form-control,
 .has-error .form-widget textarea.form-control,
-.has-error .form-widget select.form-control,
+.has-error .form-widget .form-select,
 .has-error .ea-fileupload .input-group,
 .has-error .btn.input-file-container,
 .has-error .CodeMirror,
@@ -498,29 +512,49 @@ form .invalid-feedback > .d-block + .d-block {
     .custom-file {
         height: 30px;
     }
-    .input-group-append .btn {
+    .input-group {
+        flex-wrap: nowrap;
+    }
+    .input-group .btn {
         color: var(--text-color);
         font-size: 17px;
-        height: 28px;
-        line-height: 28px;
-        margin: 1px 0 0 1px;
+        height: 30px;
+        line-height: 30px;
+        margin: 1px 0 0 4px;
         padding: 0 8px;
+        position: relative;
+        top: -8px;
         vertical-align: middle;
     }
 
     .custom-file-input {
         cursor: pointer;
+        height: calc(1.5em + .75rem + 2px);
+        margin: 0;
+        overflow: hidden;
+        opacity: 0;
+        position: relative;
+        width: 100%;
+        z-index: 2;
     }
 
     .custom-file-label {
+        background: var(--white);
+        border-radius: var(--border-radius);
+        border: 0;
+        box-shadow: 0 0 0 1px rgba(43, 45, 80, .16), 0 0 0 1px rgba(6, 122, 184, 0), 0 0 0 2px rgba(6, 122, 184, 0), 0 1px 1px rgba(0, 0, 0, .08);
+        color: var(--text-color-dark);
         height: 30px;
+        left: 0;
         margin: 0 !important;
-        text-align: left !important;
-        padding: 3px 40px 3px 7px;
-        border-right: none;
         overflow: hidden;
+        padding: 3px 40px 3px 7px;
+        position: absolute;
+        text-align: left !important;
         text-overflow: ellipsis;
+        top: 0;
         white-space: nowrap;
+        width: 100%;
     }
     .custom-file-label::after {
         display: none;
@@ -529,12 +563,12 @@ form .invalid-feedback > .d-block + .d-block {
     .input-group-text {
         background-color: white;
         border: none;
+        box-shadow: none;
         color: var(--text-muted);
-        height: 28px;
-        margin-top: 1px;
-        padding: 7px;
+        height: 30px;
+        padding: 7px 0 7px 8px;
         position: absolute;
-        right: 70px;
+        right: 0;
         z-index: 3;
     }
 

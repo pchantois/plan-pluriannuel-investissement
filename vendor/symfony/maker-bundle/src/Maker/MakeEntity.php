@@ -114,32 +114,32 @@ final class MakeEntity extends AbstractMaker implements InputAwareMakerInterface
 
         $argument = $command->getDefinition()->getArgument('name');
         $question = $this->createEntityClassQuestion($argument->getDescription());
-        $value = $io->askQuestion($question);
+        $entityClassName = $io->askQuestion($question);
 
-        $input->setArgument('name', $value);
+        $input->setArgument('name', $entityClassName);
 
         if (
             !$input->getOption('api-resource') &&
             class_exists(ApiResource::class) &&
-            !class_exists($this->generator->createClassNameDetails($value, 'Entity\\')->getFullName())
+            !class_exists($this->generator->createClassNameDetails($entityClassName, 'Entity\\')->getFullName())
         ) {
             $description = $command->getDefinition()->getOption('api-resource')->getDescription();
             $question = new ConfirmationQuestion($description, false);
-            $value = $io->askQuestion($question);
+            $isApiResource = $io->askQuestion($question);
 
-            $input->setOption('api-resource', $value);
+            $input->setOption('api-resource', $isApiResource);
         }
 
         if (
             !$input->getOption('broadcast') &&
             class_exists(Broadcast::class) &&
-            !class_exists($this->generator->createClassNameDetails($value, 'Entity\\')->getFullName())
+            !class_exists($this->generator->createClassNameDetails($entityClassName, 'Entity\\')->getFullName())
         ) {
             $description = $command->getDefinition()->getOption('broadcast')->getDescription();
             $question = new ConfirmationQuestion($description, false);
-            $value = $io->askQuestion($question);
+            $isBroadcast = $io->askQuestion($question);
 
-            $input->setOption('broadcast', $value);
+            $input->setOption('broadcast', $isBroadcast);
         }
     }
 
@@ -353,7 +353,7 @@ final class MakeEntity extends AbstractMaker implements InputAwareMakerInterface
         $snakeCasedField = Str::asSnakeCase($fieldName);
 
         if ('_at' === $suffix = substr($snakeCasedField, -3)) {
-            $defaultType = 'datetime';
+            $defaultType = 'datetime_immutable';
         } elseif ('_id' === $suffix) {
             $defaultType = 'integer';
         } elseif (0 === strpos($snakeCasedField, 'is_')) {

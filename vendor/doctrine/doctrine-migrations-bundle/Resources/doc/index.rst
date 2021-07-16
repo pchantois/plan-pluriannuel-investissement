@@ -338,7 +338,7 @@ for Doctrine's ORM:
     .. code-block:: yaml
 
         # config/doctrine/User.orm.yaml
-        App\Entity\User:
+        App\Entity\Objet\User:
             type: entity
             table: user
             id:
@@ -359,7 +359,7 @@ for Doctrine's ORM:
               xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
                             http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
-            <entity name="App\Entity\User" table="user">
+            <entity name="App\Entity\Objet\User" table="user">
                 <id name="id" type="integer" column="id">
                     <generator strategy="AUTO"/>
                 </id>

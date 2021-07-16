@@ -16,12 +16,11 @@ use Doctrine\DBAL\Types\Type;
 use function array_merge;
 use function class_exists;
 use function is_subclass_of;
+use function trigger_deprecation;
 
 use const PHP_EOL;
 
-/**
- * @psalm-import-type Params from DriverManager
- */
+/** @psalm-import-type Params from DriverManager */
 class ConnectionFactory
 {
     /** @var mixed[][] */
@@ -30,9 +29,7 @@ class ConnectionFactory
     /** @var bool */
     private $initialized = false;
 
-    /**
-     * @param mixed[][] $typesConfig
-     */
+    /** @param mixed[][] $typesConfig */
     public function __construct(array $typesConfig)
     {
         $this->typesConfig = $typesConfig;
@@ -43,10 +40,9 @@ class ConnectionFactory
      *
      * @param mixed[]               $params
      * @param array<string, string> $mappingTypes
+     * @psalm-param Params $params
      *
      * @return Connection
-     *
-     * @psalm-param Params $params
      */
     public function createConnection(array $params, ?Configuration $config = null, ?EventManager $eventManager = null, array $mappingTypes = [])
     {
@@ -54,10 +50,14 @@ class ConnectionFactory
             $this->initializeTypes();
         }
 
-        $overriddenOptions = $params['connection_override_options'] ?? [];
-        unset($params['connection_override_options']);
+        $overriddenOptions = [];
+        if (isset($params['connection_override_options'])) {
+            trigger_deprecation('doctrine/doctrine-bundle', '2.4', 'The "connection_override_options" connection parameter is deprecated');
+            $overriddenOptions = $params['connection_override_options'];
+            unset($params['connection_override_options']);
+        }
 
-        if (! isset($params['pdo']) && (! isset($params['charset']) || $overriddenOptions)) {
+        if (! isset($params['pdo']) && (! isset($params['charset']) || $overriddenOptions || isset($params['dbname_suffix']))) {
             $wrapperClass = null;
 
             if (isset($params['wrapperClass'])) {
@@ -77,14 +77,20 @@ class ConnectionFactory
             $params     = array_merge($connection->getParams(), $overriddenOptions);
             $driver     = $connection->getDriver();
 
-            if ($driver instanceof AbstractMySQLDriver) {
-                $params['charset'] = 'utf8mb4';
+            if (isset($params['dbname']) && isset($params['dbname_suffix'])) {
+                $params['dbname'] .= $params['dbname_suffix'];
+            }
 
-                if (! isset($params['defaultTableOptions']['collate'])) {
-                    $params['defaultTableOptions']['collate'] = 'utf8mb4_unicode_ci';
+            if (! isset($params['charset'])) {
+                if ($driver instanceof AbstractMySQLDriver) {
+                    $params['charset'] = 'utf8mb4';
+
+                    if (! isset($params['defaultTableOptions']['collate'])) {
+                        $params['defaultTableOptions']['collate'] = 'utf8mb4_unicode_ci';
+                    }
+                } else {
+                    $params['charset'] = 'utf8';
                 }
-            } else {
-                $params['charset'] = 'utf8';
             }
 
             if ($wrapperClass !== null) {
