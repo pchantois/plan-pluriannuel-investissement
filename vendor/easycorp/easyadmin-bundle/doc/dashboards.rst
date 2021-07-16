@@ -266,7 +266,7 @@ the look and behavior of each menu item::
     use App\Entity\BlogPost;
     use App\Entity\Category;
     use App\Entity\Comment;
-    use App\Entity\User;
+    use App\Entity\Objet\User;
     use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
     use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 
